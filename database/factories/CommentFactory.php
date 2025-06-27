@@ -19,7 +19,7 @@ class CommentFactory extends Factory
      */
     public function definition(): array
     {
-        if (app()->isProduction()) {
+        if (app()->isProduction() && false) {
             $comments = [
                 'This prompt works really well for my use case.',
                 'Great example, thanks for sharing!',
@@ -30,7 +30,7 @@ class CommentFactory extends Factory
                 'Works perfectly for what I needed.',
                 'Thanks for the detailed explanation.',
                 'I use a similar approach but with different parameters.',
-                'Excellent prompt engineering example.'
+                'Excellent prompt engineering example.',
             ];
             $body = Arr::random($comments);
         } else {

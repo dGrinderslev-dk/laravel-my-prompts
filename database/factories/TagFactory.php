@@ -19,12 +19,28 @@ class TagFactory extends Factory
      */
     public function definition(): array
     {
-        if (app()->isProduction()) {
+        if (app()->isProduction() && false) {
             $tags = [
-                'coding', 'creative', 'analysis', 'writing', 'automation',
-                'research', 'planning', 'documentation', 'marketing', 'design',
-                'productivity', 'communication', 'strategy', 'education', 'workflow',
-                'brainstorming', 'optimization', 'debugging', 'content', 'review'
+                'coding',
+                'creative',
+                'analysis',
+                'writing',
+                'automation',
+                'research',
+                'planning',
+                'documentation',
+                'marketing',
+                'design',
+                'productivity',
+                'communication',
+                'strategy',
+                'education',
+                'workflow',
+                'brainstorming',
+                'optimization',
+                'debugging',
+                'content',
+                'review',
             ];
             $name = Arr::random($tags);
         } else {

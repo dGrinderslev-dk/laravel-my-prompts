@@ -19,25 +19,36 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
-        if (app()->isProduction()) {
+        if (app()->isProduction() && false) {
             $categories = [
-                'AI Prompts', 'Creative Writing', 'Code Generation', 'Data Analysis',
-                'Image Generation', 'Text Summarization', 'Language Translation',
-                'Business Strategy', 'Marketing Ideas', 'Technical Documentation',
-                'Research Questions', 'Educational Content', 'Content Planning',
-                'Email Templates', 'Social Media', 'Product Descriptions'
+                'AI Prompts',
+                'Creative Writing',
+                'Code Generation',
+                'Data Analysis',
+                'Image Generation',
+                'Text Summarization',
+                'Language Translation',
+                'Business Strategy',
+                'Marketing Ideas',
+                'Technical Documentation',
+                'Research Questions',
+                'Educational Content',
+                'Content Planning',
+                'Email Templates',
+                'Social Media',
+                'Product Descriptions',
             ];
             $name = Arr::random($categories);
             $userCreatedAt = now()->subDays(rand(5, 6));
             $categoryCreatedAt = now()->subDays(rand(3, 4));
             $categoryUpdatedAt = now()->subDays(rand(0, 2));
         } else {
-            $name = fake()->words(rand(2,6), true);
+            $name = fake()->words(rand(2, 6), true);
             $userCreatedAt = fake()->dateTimeBetween('-6 days', '-5 days');
             $categoryCreatedAt = fake()->dateTimeBetween($userCreatedAt, '-3 days');
             $categoryUpdatedAt = fake()->dateTimeBetween($categoryCreatedAt, 'now');
         }
-        
+
         return [
             'user_id' => User::factory(), // Evt. generer tilknyttet bruger
             'name' => $name,

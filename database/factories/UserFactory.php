@@ -24,12 +24,23 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        if (app()->isProduction()) {
+        if (app()->isProduction() && false) {
             $usernames = [
-                'prompt_master', 'ai_explorer', 'code_wizard', 'creative_mind',
-                'data_analyst', 'tech_writer', 'content_creator', 'strategy_guru',
-                'research_pro', 'automation_expert', 'design_thinker', 'workflow_ninja',
-                'productivity_hacker', 'innovation_seeker', 'problem_solver'
+                'prompt_master',
+                'ai_explorer',
+                'code_wizard',
+                'creative_mind',
+                'data_analyst',
+                'tech_writer',
+                'content_creator',
+                'strategy_guru',
+                'research_pro',
+                'automation_expert',
+                'design_thinker',
+                'workflow_ninja',
+                'productivity_hacker',
+                'innovation_seeker',
+                'problem_solver',
             ];
             $name = Arr::random($usernames) . rand(100, 999);
             $name = substr(strtolower($name), 0, 20);
@@ -43,7 +54,7 @@ class UserFactory extends Factory
             $createdAt = fake()->dateTimeBetween('-8 days', '-7 days');
             $updatedAt = fake()->dateTimeBetween($createdAt, 'now');
         }
-        
+
         return [
             // 'name' => fake()->name(),
             'name' => $name,
