@@ -14,11 +14,12 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Faker\Factory;
 
 if (!function_exists('fake')) {
     function fake()
     {
-        return \Faker\Factory::create();
+        return Factory::create();
     }
 }
 
