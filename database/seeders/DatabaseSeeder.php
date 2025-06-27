@@ -613,6 +613,7 @@ class DatabaseSeeder extends Seeder
         $prompt2 = Prompt::factory()->create([
             'user_id' => $user2->id,
         ]);
+        
 
     }
 }
