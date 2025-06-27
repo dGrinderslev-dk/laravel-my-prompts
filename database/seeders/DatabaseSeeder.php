@@ -590,5 +590,10 @@ class DatabaseSeeder extends Seeder
             }
         }
 
+        $user2 = User::factory()->create([
+            'password' => Hash::make(env('USER_MARKETING_PASSWORD')),
+        ]);
+
+
     }
 }
