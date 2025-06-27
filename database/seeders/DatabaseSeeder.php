@@ -14,6 +14,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use function Illuminate\Support\fake;
 
 class DatabaseSeeder extends Seeder
 {
