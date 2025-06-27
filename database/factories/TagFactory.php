@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 /**
@@ -18,7 +19,17 @@ class TagFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->word();
+        if (app()->isProduction()) {
+            $tags = [
+                'coding', 'creative', 'analysis', 'writing', 'automation',
+                'research', 'planning', 'documentation', 'marketing', 'design',
+                'productivity', 'communication', 'strategy', 'education', 'workflow',
+                'brainstorming', 'optimization', 'debugging', 'content', 'review'
+            ];
+            $name = Arr::random($tags);
+        } else {
+            $name = fake()->word();
+        }
 
         return [
             'user_id' => User::factory(),
