@@ -592,7 +592,6 @@ class DatabaseSeeder extends Seeder
 
 
 
-
         $user2 = User::factory()->create([
             'email' => 'test@mail.dk',
             'password' => Hash::make(env('USER_MARKETING_PASSWORD')),
@@ -613,7 +612,7 @@ class DatabaseSeeder extends Seeder
         $prompt2 = Prompt::factory()->create([
             'user_id' => $user2->id,
         ]);
-        
+
 
     }
 }
