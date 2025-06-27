@@ -20,10 +20,16 @@ class CategoryFactory extends Factory
     {
         $name = fake()->words(rand(2,6), true); // fx "Test Category"
         
+        $userCreatedAt = fake()->dateTimeBetween('-6 days', '-5 days');
+        $categoryCreatedAt = fake()->dateTimeBetween($userCreatedAt, '-3 days');
+        $categoryUpdatedAt = fake()->dateTimeBetween($categoryCreatedAt, 'now');
+        
         return [
             'user_id' => User::factory(), // Evt. generer tilknyttet bruger
             'name' => $name,
             'slug' => Str::slug($name),
+            'created_at' => $categoryCreatedAt,
+            'updated_at' => $categoryUpdatedAt,
         ];
     }
 }

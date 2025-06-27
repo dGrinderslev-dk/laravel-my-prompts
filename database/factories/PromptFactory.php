@@ -24,12 +24,19 @@ class PromptFactory extends Factory
         $title = $useQuote ? trim($author) : fake()->sentence();
         $content = $useQuote ? trim($message) : fake()->realTextBetween(500, 1500);
 
+        $userCreatedAt = fake()->dateTimeBetween('-6 days', '-5 days');
+        $categoryCreatedAt = fake()->dateTimeBetween($userCreatedAt, '-3 days');
+        $promptCreatedAt = fake()->dateTimeBetween($categoryCreatedAt, '-1 days');
+        $promptUpdatedAt = fake()->dateTimeBetween($promptCreatedAt, 'now');
+
         return [
             'user_id' => User::factory(), // generer en tilknyttet bruger
             'title' => $title,
             'content' => $content,
             // 'share_url' => (string) Str::uuid(),
             //'category_id' => fake()->boolean(75) ? Category::factory() : null,
+            'created_at' => $promptCreatedAt,
+            'updated_at' => $promptUpdatedAt,
         ];
     }
 }

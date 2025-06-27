@@ -23,6 +23,9 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $createdAt = fake()->dateTimeBetween('-8 days', '-7 days');
+        $updatedAt = fake()->dateTimeBetween($createdAt, 'now');
+
         return [
             // 'name' => fake()->name(),
             'name' => substr(preg_replace('/[^a-z0-9_]/', '_', fake()->userName), 0, 20),
@@ -31,6 +34,8 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'created_at' => $createdAt,
+            'updated_at' => $updatedAt,
         ];
     }
 

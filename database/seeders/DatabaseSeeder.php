@@ -14,14 +14,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Faker\Factory;
-
-if (!function_exists('fake')) {
-    function fake()
-    {
-        return Factory::create();
-    }
-}
 
 class DatabaseSeeder extends Seeder
 {
@@ -227,26 +219,22 @@ class DatabaseSeeder extends Seeder
         */
 
         //USER_MARKETING
-        $userCreatedAt = fake()->dateTimeBetween('-8 days', '-7 days');
-        $userUpdatedAt = fake()->dateTimeBetween($userCreatedAt, 'now');
         $user = User::factory()->create([
             'name' => 'michael_smith_1',
             'email' => 'michael.smith@example.com',
             'password' => Hash::make(env('USER_MARKETING_PASSWORD')),
-            'created_at' => $userCreatedAt,
-            'updated_at' => $userUpdatedAt,
         ]);
 
         PublicProfile::factory()->create([
             'user_id' => $user->id,
-            'created_at' => $userCreatedAt,
-            'updated_at' => $userUpdatedAt,
+            'created_at' => $user->created_at,
+            'updated_at' => $user->updated_at,
         ]);
 
         UserSetting::factory()->create([
             'user_id' => $user->id,
-            'created_at' => $userCreatedAt,
-            'updated_at' => $userUpdatedAt,
+            'created_at' => $user->created_at,
+            'updated_at' => $user->updated_at,
         ]);
 
         $categories = [
@@ -279,14 +267,11 @@ class DatabaseSeeder extends Seeder
         $categoryModels = [];
 
         foreach ($categories as $x => $y) {
-            $categoryCreatedAt = fake()->dateTimeBetween($userCreatedAt, '-5 days');
             $categoryModels[$x] = Category::factory()->create([
                 'user_id' => $user->id,
                 'name' => $x,
                 'description' => $y['description'],
                 'slug' => Str::slug($x),
-                'created_at' => $categoryCreatedAt,
-                'updated_at' => fake()->dateTimeBetween($categoryCreatedAt, 'now'),
             ]);
         }
 
@@ -587,20 +572,13 @@ class DatabaseSeeder extends Seeder
 
         foreach ($categoriesData as $categoryData) {
             $category = $categoryModels[$categoryData['category_id']];
-            $categoryCreatedAt = $category->created_at;
-
             foreach ($categoryData['prompts'] as $promptsData) {
-                $promptCreatedAt = fake()->dateTimeBetween($categoryCreatedAt, '-2 days');
-                $promptUpdatedAt = fake()->dateTimeBetween($promptCreatedAt, 'now');
-
                 $prompt = Prompt::factory()->create(
                     array_merge(
                         $promptsData,
                         [
                             'user_id' => $user->id,
                             'category_id' => $category->id,
-                            'created_at' => $promptCreatedAt,
-                            'updated_at' => $promptUpdatedAt,
                         ]
                     )
                 );
