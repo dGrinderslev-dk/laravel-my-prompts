@@ -590,10 +590,29 @@ class DatabaseSeeder extends Seeder
             }
         }
 
+
+
+
         $user2 = User::factory()->create([
+            'email' => 'test@mail.dk',
             'password' => Hash::make(env('USER_MARKETING_PASSWORD')),
         ]);
 
+        PublicProfile::factory()->create([
+            'user_id' => $user2->id,
+        ]);
+
+        UserSetting::factory()->create([
+            'user_id' => $user2->id,
+        ]);
+
+        $category2 = Category::factory()->create([
+            'user_id' => $user2->id,
+        ]);
+
+        $prompt2 = Prompt::factory()->create([
+            'user_id' => $user2->id,
+        ]);
 
     }
 }
