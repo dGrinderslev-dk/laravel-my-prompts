@@ -19,7 +19,7 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
-        if (app()->isProduction() && false) {
+        if (app()->isProduction()) {
             $categories = [
                 'AI Prompts',
                 'Creative Writing',

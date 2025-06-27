@@ -24,7 +24,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        if (app()->isProduction() && false) {
+        if (app()->isProduction()) {
             $usernames = [
                 'prompt_master',
                 'ai_explorer',

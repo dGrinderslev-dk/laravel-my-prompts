@@ -19,7 +19,7 @@ class CommentFactory extends Factory
      */
     public function definition(): array
     {
-        if (app()->isProduction() && false) {
+        if (app()->isProduction()) {
             $comments = [
                 'This prompt works really well for my use case.',
                 'Great example, thanks for sharing!',

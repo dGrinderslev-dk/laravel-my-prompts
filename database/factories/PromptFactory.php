@@ -21,7 +21,7 @@ class PromptFactory extends Factory
     {
         [$message, $author] = str(\Illuminate\Foundation\Inspiring::quotes()->random())->explode('-');
 
-        if (app()->isProduction() && false) {
+        if (app()->isProduction()) {
             $title = trim($author);
             $content = trim($message);
             $promptCreatedAt = now()->subDays(rand(2, 3));

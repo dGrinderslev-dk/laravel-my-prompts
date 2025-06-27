@@ -19,7 +19,7 @@ class TagFactory extends Factory
      */
     public function definition(): array
     {
-        if (app()->isProduction() && false) {
+        if (app()->isProduction()) {
             $tags = [
                 'coding',
                 'creative',
