@@ -22,7 +22,7 @@ return [
   'components__layouts__publicprofile' => $appName . $separator . 'Public Profile',
 
   // views standard værdier (feks resources/views/eksempel-mappe/eksempelUndermappe/mit-eksempel-view.blade.php har short key "eksempel_mappe__eksempelundermappe__mit_eksempel_view")
-  'blade_pages__public__home' => $appName . $separator . 'Home page',
+  'blade_pages__public__home' => $appName,
   'blade_pages__public__cookies_and_privacy_policy' => $appName . $separator . 'Cookies & Privacy Policy',
   'blade_pages__public__terms_of_use' => $appName . $separator . 'Terms of Use',
   'blade_pages__user__settings__taxonomy' => $appName . $separator . 'Settings Tags/Categories',

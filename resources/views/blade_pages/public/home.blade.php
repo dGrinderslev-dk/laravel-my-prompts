@@ -326,7 +326,6 @@ $faqs = [
 			@endforeach
 		</div>
 	</div>
-	
 	{{-- Support message --}}
 	{{--
 	<div class="mt-8 text-center lg:max-w-screen-sm lg:mx-auto">
