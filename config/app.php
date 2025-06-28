@@ -123,4 +123,22 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom App Configuration (Tilføjet af mig)
+    |--------------------------------------------------------------------------
+    |
+    | Her er alle de custom konfigurationer som er tilføjet til projektet.
+    |
+    */
+
+    'legal_email' => env('MAIL_LEGAL_EMAIL', 'legal@example.com'), // Denne email-adresse vil blive brugt til juridiske henvendelser inklusive privatlivspolitik, brugsvilkår og andre juridiske spørgsmål.
+    
+    'privacy_policy_updated' => env('APP_PRIVACY_POLICY_UPDATED', '2025-01'), // Format: YYYY-MM
+    'privacy_policy_updated_formatted' => \Carbon\Carbon::createFromFormat('Y-m', env('APP_PRIVACY_POLICY_UPDATED', '2025-01'))->format('F Y'),
+
+    'terms_of_use_updated' => env('APP_TERMS_UPDATED', '2025-01'), // Format: YYYY-MM
+    'terms_of_use_updated_formatted' => \Carbon\Carbon::createFromFormat('Y-m', env('APP_TERMS_UPDATED', '2025-01'))->format('F Y'),
+
 ];
