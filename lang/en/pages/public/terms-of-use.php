@@ -84,6 +84,22 @@ return [
 			'description' => 'While we implement reasonable backup procedures, you are responsible for maintaining your own copies of important content. We recommend regularly exporting or backing up your prompts and other data.',
 		],
 	],
+	
+	'intellectualProperty' => [
+		'title' => 'Intellectual Property Rights',
+		'platform' => [
+			'title' => 'Platform Ownership',
+			'description' => 'The Service, including but not limited to its design, code, features, functionality, user interface, and overall "look and feel" are owned by us and are protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, sell, or reverse engineer any part of the Service.',
+		],
+		'proprietary' => [
+			'title' => 'Proprietary Technology',
+			'description' => 'The underlying technology, algorithms, software code, and business methods that power '.$appName.' are proprietary and confidential. Any attempt to access, copy, reverse engineer, or use our systems to create competing services is strictly prohibited.',
+		],
+		'userContent' => [
+			'title' => 'Your Content vs. Our Platform',
+			'description' => 'While you retain ownership of your prompts and content as stated above, this does not grant you any rights to our platform technology, features, or methodologies. The platform itself remains our exclusive intellectual property.',
+		],
+	],
 
 	'availability' => [
 		'title' => 'Service Availability',

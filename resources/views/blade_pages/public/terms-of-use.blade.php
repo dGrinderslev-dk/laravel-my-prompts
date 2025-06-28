@@ -141,6 +141,35 @@
 					</div>
 				</section>
 
+				{{-- Intellectual Property Rights --}}
+				<section class="mb-12">
+					<h2 class="text-on-surface-strong dark:text-on-surface-dark-strong text-2xl font-semibold mb-6">
+						{{ __('pages/public/terms-of-use.intellectualProperty.title') }}
+					</h2>
+					<div class="text-on-surface dark:text-on-surface-dark space-y-6">
+						<div>
+							<h3 class="text-on-surface-strong dark:text-on-surface-dark-strong text-xl font-medium mb-3">
+								{{ __('pages/public/terms-of-use.intellectualProperty.platform.title') }}
+							</h3>
+							<p>{{ __('pages/public/terms-of-use.intellectualProperty.platform.description') }}</p>
+						</div>
+
+						<div>
+							<h3 class="text-on-surface-strong dark:text-on-surface-dark-strong text-xl font-medium mb-3">
+								{{ __('pages/public/terms-of-use.intellectualProperty.proprietary.title') }}
+							</h3>
+							<p>{{ __('pages/public/terms-of-use.intellectualProperty.proprietary.description') }}</p>
+						</div>
+
+						<div>
+							<h3 class="text-on-surface-strong dark:text-on-surface-dark-strong text-xl font-medium mb-3">
+								{{ __('pages/public/terms-of-use.intellectualProperty.userContent.title') }}
+							</h3>
+							<p>{{ __('pages/public/terms-of-use.intellectualProperty.userContent.description') }}</p>
+						</div>
+					</div>
+				</section>
+
 				{{-- Service Availability --}}
 				<section class="mb-12">
 					<h2 class="text-on-surface-strong dark:text-on-surface-dark-strong text-2xl font-semibold mb-6">
