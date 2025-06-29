@@ -177,14 +177,33 @@
 					</h2>
 					<div class="text-on-surface dark:text-on-surface-dark space-y-4">
 						<p>{{ __('pages/public/terms-of-use.availability.effort') }}</p>
+						<p>{{ __('pages/public/terms-of-use.availability.infrastructure') }}</p>
 						<p>{{ __('pages/public/terms-of-use.availability.interruptions') }}</p>
 						<ul class="list-disc pl-6 space-y-1 text-on-surface/90 dark:text-on-surface-dark/90">
 							<li>{{ __('pages/public/terms-of-use.availability.reasons.maintenance') }}</li>
 							<li>{{ __('pages/public/terms-of-use.availability.reasons.technical') }}</li>
 							<li>{{ __('pages/public/terms-of-use.availability.reasons.security') }}</li>
 							<li>{{ __('pages/public/terms-of-use.availability.reasons.legal') }}</li>
+							<li>{{ __('pages/public/terms-of-use.availability.reasons.provider') }}</li>
 						</ul>
 						<p>{{ __('pages/public/terms-of-use.availability.notification') }}</p>
+					</div>
+				</section>
+
+				{{-- Privacy and Data Protection Reference --}}
+				<section class="mb-12">
+					<h2 class="text-on-surface-strong dark:text-on-surface-dark-strong text-2xl font-semibold mb-6">
+						{{ __('pages/public/terms-of-use.privacy.title') }}
+					</h2>
+					<div class="text-on-surface dark:text-on-surface-dark space-y-4">
+						<p>{{ __('pages/public/terms-of-use.privacy.overview') }}</p>
+						<div class="bg-surface-alt/50 dark:bg-surface-dark-alt/50 rounded-radius p-4">
+							<p class="font-medium text-on-surface-strong dark:text-on-surface-dark-strong mb-2">
+								{{ __('pages/public/terms-of-use.privacy.reference.title') }}
+							</p>
+							<p class="text-sm">{{ __('pages/public/terms-of-use.privacy.reference.description') }}</p>
+						</div>
+						<p>{{ __('pages/public/terms-of-use.privacy.compliance') }}</p>
 					</div>
 				</section>
 

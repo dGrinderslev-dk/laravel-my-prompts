@@ -39,6 +39,110 @@
 					</div>
 				</section>
 
+				{{-- Cookie Banner Explanation --}}
+				<section class="mb-12">
+					<h2 class="text-on-surface-strong dark:text-on-surface-dark-strong text-2xl font-semibold mb-6">
+						{{ __('pages/public/cookies-and-privacy-policy.noBanner.title') }}
+					</h2>
+					<div class="text-on-surface dark:text-on-surface-dark space-y-4">
+						<p>{{ __('pages/public/cookies-and-privacy-policy.noBanner.explanation') }}</p>
+						<div class="bg-primary/10 dark:bg-primary-dark/10 border border-primary/20 dark:border-primary-dark/20 rounded-radius p-4">
+							<p class="text-sm font-medium text-primary dark:text-primary-dark">
+								{{ __('pages/public/cookies-and-privacy-policy.noBanner.notice') }}
+							</p>
+						</div>
+					</div>
+				</section>
+
+				{{-- Cookies Section --}}
+				<section class="mb-12">
+					<h2 class="text-on-surface-strong dark:text-on-surface-dark-strong text-2xl font-semibold mb-6">
+						{{ __('pages/public/cookies-and-privacy-policy.cookies.title') }}
+					</h2>
+					<div class="text-on-surface dark:text-on-surface-dark space-y-6">
+						<p>{{ __('pages/public/cookies-and-privacy-policy.cookies.description') }}</p>
+						
+						<div>
+							<h3 class="text-on-surface-strong dark:text-on-surface-dark-strong text-xl font-medium mb-4">
+								{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.title') }}
+							</h3>
+							<p class="mb-4">{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.description') }}</p>
+							
+							{{-- Cookie Table --}}
+							<div class="overflow-x-auto">
+								<table class="w-full border border-outline/20 dark:border-outline-dark/20 rounded-radius">
+									<thead class="bg-surface-alt/50 dark:bg-surface-dark-alt/50">
+										<tr>
+											<th class="text-left p-3 text-sm font-medium text-on-surface-strong dark:text-on-surface-dark-strong border-b border-outline/20 dark:border-outline-dark/20">
+												{{ __('pages/public/cookies-and-privacy-policy.cookies.table.name') }}
+											</th>
+											<th class="text-left p-3 text-sm font-medium text-on-surface-strong dark:text-on-surface-dark-strong border-b border-outline/20 dark:border-outline-dark/20">
+												{{ __('pages/public/cookies-and-privacy-policy.cookies.table.purpose') }}
+											</th>
+											<th class="text-left p-3 text-sm font-medium text-on-surface-strong dark:text-on-surface-dark-strong border-b border-outline/20 dark:border-outline-dark/20">
+												{{ __('pages/public/cookies-and-privacy-policy.cookies.table.lifespan') }}
+											</th>
+											<th class="text-left p-3 text-sm font-medium text-on-surface-strong dark:text-on-surface-dark-strong border-b border-outline/20 dark:border-outline-dark/20">
+												{{ __('pages/public/cookies-and-privacy-policy.cookies.table.category') }}
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="border-b border-outline/10 dark:border-outline-dark/10">
+											<td class="p-3 text-sm">
+												<strong class="text-on-surface-strong dark:text-on-surface-dark-strong">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.session.name') }}</strong>
+											</td>
+											<td class="p-3 text-sm">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.session.purpose') }}</td>
+											<td class="p-3 text-sm">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.session.lifespan') }}</td>
+											<td class="p-3 text-sm">
+												<span class="inline-flex items-center px-2 py-1 rounded-radius text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200">
+													{{ __('pages/public/cookies-and-privacy-policy.cookies.list.session.category') }}
+												</span>
+											</td>
+										</tr>
+										<tr class="border-b border-outline/10 dark:border-outline-dark/10">
+											<td class="p-3 text-sm">
+												<strong class="text-on-surface-strong dark:text-on-surface-dark-strong">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.csrf.name') }}</strong>
+											</td>
+											<td class="p-3 text-sm">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.csrf.purpose') }}</td>
+											<td class="p-3 text-sm">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.csrf.lifespan') }}</td>
+											<td class="p-3 text-sm">
+												<span class="inline-flex items-center px-2 py-1 rounded-radius text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200">
+													{{ __('pages/public/cookies-and-privacy-policy.cookies.list.csrf.category') }}
+												</span>
+											</td>
+										</tr>
+										<tr class="border-b border-outline/10 dark:border-outline-dark/10">
+											<td class="p-3 text-sm">
+												<strong class="text-on-surface-strong dark:text-on-surface-dark-strong">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.auth.name') }}</strong>
+											</td>
+											<td class="p-3 text-sm">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.auth.purpose') }}</td>
+											<td class="p-3 text-sm">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.auth.lifespan') }}</td>
+											<td class="p-3 text-sm">
+												<span class="inline-flex items-center px-2 py-1 rounded-radius text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200">
+													{{ __('pages/public/cookies-and-privacy-policy.cookies.list.auth.category') }}
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="p-3 text-sm">
+												<strong class="text-on-surface-strong dark:text-on-surface-dark-strong">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.cloudflare.name') }}</strong>
+											</td>
+											<td class="p-3 text-sm">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.cloudflare.purpose') }}</td>
+											<td class="p-3 text-sm">{{ __('pages/public/cookies-and-privacy-policy.cookies.list.cloudflare.lifespan') }}</td>
+											<td class="p-3 text-sm">
+												<span class="inline-flex items-center px-2 py-1 rounded-radius text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200">
+													{{ __('pages/public/cookies-and-privacy-policy.cookies.list.cloudflare.category') }}
+												</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+
 				{{-- Data Collection --}}
 				<section class="mb-12">
 					<h2 class="text-on-surface-strong dark:text-on-surface-dark-strong text-2xl font-semibold mb-6">
@@ -83,40 +187,66 @@
 					</div>
 				</section>
 
-				{{-- Cookies Section --}}
+				{{-- Data Processors and Hosting --}}
 				<section class="mb-12">
 					<h2 class="text-on-surface-strong dark:text-on-surface-dark-strong text-2xl font-semibold mb-6">
-						{{ __('pages/public/cookies-and-privacy-policy.cookies.title') }}
+						{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.title') }}
 					</h2>
 					<div class="text-on-surface dark:text-on-surface-dark space-y-6">
-						<p>{{ __('pages/public/cookies-and-privacy-policy.cookies.description') }}</p>
+						<p>{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.description') }}</p>
 						
-						<div>
-							<h3 class="text-on-surface-strong dark:text-on-surface-dark-strong text-xl font-medium mb-3">
-								{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.title') }}
-							</h3>
-							<p class="mb-3">{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.description') }}</p>
-							
-							<div class="bg-surface-alt/50 dark:bg-surface-dark-alt/50 rounded-radius p-4 space-y-3">
-								<div>
-									<strong class="text-on-surface-strong dark:text-on-surface-dark-strong">{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.session.name') }}</strong>
-									<p class="text-sm text-on-surface/90 dark:text-on-surface-dark/90 mt-1">
-										{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.session.purpose') }}
-									</p>
-								</div>
-								<div>
-									<strong class="text-on-surface-strong dark:text-on-surface-dark-strong">{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.csrf.name') }}</strong>
-									<p class="text-sm text-on-surface/90 dark:text-on-surface-dark/90 mt-1">
-										{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.csrf.purpose') }}
-									</p>
-								</div>
-								<div>
-									<strong class="text-on-surface-strong dark:text-on-surface-dark-strong">{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.auth.name') }}</strong>
-									<p class="text-sm text-on-surface/90 dark:text-on-surface-dark/90 mt-1">
-										{{ __('pages/public/cookies-and-privacy-policy.cookies.essential.auth.purpose') }}
-									</p>
+						<div class="grid gap-6 md:grid-cols-1">
+							<div class="border border-outline/20 dark:border-outline-dark/20 rounded-radius p-6">
+								<h3 class="text-on-surface-strong dark:text-on-surface-dark-strong text-xl font-medium mb-3">
+									{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.hosting.title') }}
+								</h3>
+								<div class="space-y-3">
+									<div>
+										<p class="font-medium">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.hosting.provider.title') }}</p>
+										<p class="text-sm text-on-surface/80 dark:text-on-surface-dark/80">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.hosting.provider.description') }}</p>
+									</div>
+									<div>
+										<p class="font-medium">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.hosting.location.title') }}</p>
+										<p class="text-sm text-on-surface/80 dark:text-on-surface-dark/80">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.hosting.location.description') }}</p>
+									</div>
+									<div>
+										<p class="font-medium">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.hosting.purpose.title') }}</p>
+										<p class="text-sm text-on-surface/80 dark:text-on-surface-dark/80">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.hosting.purpose.description') }}</p>
+									</div>
 								</div>
 							</div>
+
+							<div class="border border-outline/20 dark:border-outline-dark/20 rounded-radius p-6">
+								<h3 class="text-on-surface-strong dark:text-on-surface-dark-strong text-xl font-medium mb-3">
+									{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.title') }}
+								</h3>
+								<div class="space-y-3">
+									<div>
+										<p class="font-medium">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.provider.title') }}</p>
+										<p class="text-sm text-on-surface/80 dark:text-on-surface-dark/80">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.provider.description') }}</p>
+									</div>
+									<div>
+										<p class="font-medium">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.services.title') }}</p>
+										<ul class="text-sm text-on-surface/80 dark:text-on-surface-dark/80 list-disc list-inside space-y-1">
+											<li>{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.services.cdn') }}</li>
+											<li>{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.services.ddos') }}</li>
+											<li>{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.services.edge') }}</li>
+											<li>{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.services.security') }}</li>
+										</ul>
+									</div>
+									<div>
+										<p class="font-medium">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.transfer.title') }}</p>
+										<p class="text-sm text-on-surface/80 dark:text-on-surface-dark/80">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.cloudflare.transfer.description') }}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg-surface-alt/50 dark:bg-surface-dark-alt/50 rounded-radius p-4">
+							<p class="text-sm font-medium text-on-surface-strong dark:text-on-surface-dark-strong mb-2">
+								{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.legal.title') }}
+							</p>
+							<p class="text-sm">{{ __('pages/public/cookies-and-privacy-policy.dataProcessors.legal.description') }}</p>
 						</div>
 					</div>
 				</section>

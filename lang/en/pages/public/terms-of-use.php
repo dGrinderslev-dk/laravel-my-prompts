@@ -6,20 +6,20 @@ $lastUpdated = config('app.terms_of_use_updated_formatted');
 return [
 	'header' => [
 		'title' => 'Terms of Use',
-		'subtitle' => 'Please read these terms carefully before using '.$appName.'. By using our service, you agree to be bound by these terms.',
-		'lastUpdated' => 'Last updated: '.$lastUpdated,
+		'subtitle' => 'Please read these terms carefully before using ' . $appName . '. By using our service, you agree to be bound by these terms.',
+		'lastUpdated' => 'Last updated: ' . $lastUpdated,
 	],
 
 	'introduction' => [
 		'title' => 'Agreement to Terms',
-		'paragraph1' => 'These Terms of Use ("Terms") govern your use of '.$appName.' (the "Service"), operated by us ("we," "us," or "our"). The Service provides a platform for managing and organizing AI prompts.',
+		'paragraph1' => 'These Terms of Use ("Terms") govern your use of ' . $appName . ' (the "Service"), operated by us ("we," "us," or "our"). The Service provides a platform for managing and organizing AI prompts.',
 		'paragraph2' => 'By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of these terms, then you may not access the Service.',
 		'paragraph3' => 'These Terms apply to all visitors, users, and others who access or use the Service, whether as a guest or registered user.',
 	],
 
 	'service' => [
 		'title' => 'Description of Service',
-		'description' => $appName.' is a web-based application that allows users to store, organize, and manage AI prompts for various artificial intelligence tools and platforms.',
+		'description' => $appName . ' is a web-based application that allows users to store, organize, and manage AI prompts for various artificial intelligence tools and platforms.',
 		'features' => 'Our Service includes the following features:',
 		'featuresList' => [
 			'storage' => 'Secure storage of AI prompts with categorization',
@@ -84,7 +84,7 @@ return [
 			'description' => 'While we implement reasonable backup procedures, you are responsible for maintaining your own copies of important content. We recommend regularly exporting or backing up your prompts and other data.',
 		],
 	],
-	
+
 	'intellectualProperty' => [
 		'title' => 'Intellectual Property Rights',
 		'platform' => [
@@ -93,7 +93,7 @@ return [
 		],
 		'proprietary' => [
 			'title' => 'Proprietary Technology',
-			'description' => 'The underlying technology, algorithms, software code, and business methods that power '.$appName.' are proprietary and confidential. Any attempt to access, copy, reverse engineer, or use our systems to create competing services is strictly prohibited.',
+			'description' => 'The underlying technology, algorithms, software code, and business methods that power ' . $appName . ' are proprietary and confidential. Any attempt to access, copy, reverse engineer, or use our systems to create competing services is strictly prohibited.',
 		],
 		'userContent' => [
 			'title' => 'Your Content vs. Our Platform',
@@ -104,14 +104,26 @@ return [
 	'availability' => [
 		'title' => 'Service Availability',
 		'effort' => 'We strive to maintain high availability of the Service, but we cannot guarantee uninterrupted access. The Service may be temporarily unavailable due to maintenance, updates, or technical issues.',
+		'infrastructure' => 'Our Service is hosted on professional cloud infrastructure (Laravel Cloud with Cloudflare) located in the EU (Frankfurt, Germany), which provides reliable performance and security.',
 		'interruptions' => 'Service interruptions may occur for various reasons, including:',
 		'reasons' => [
 			'maintenance' => 'Scheduled maintenance and system updates',
 			'technical' => 'Technical difficulties or server issues',
 			'security' => 'Security measures or investigations',
 			'legal' => 'Legal requirements or compliance obligations',
+			'provider' => 'Third-party infrastructure provider outages or maintenance',
 		],
 		'notification' => 'We will make reasonable efforts to provide advance notice of planned maintenance when possible.',
+	],
+
+	'privacy' => [
+		'title' => 'Privacy and Data Protection',
+		'overview' => 'Your privacy is important to us. The collection, use, and protection of your personal information is governed by our separate Privacy Policy, which forms an integral part of these Terms.',
+		'reference' => [
+			'title' => 'Privacy Policy Reference',
+			'description' => 'For detailed information about how we collect, use, store, and protect your personal data, including information about cookies, data processors, and your rights under GDPR, please read our Privacy Policy.',
+		],
+		'compliance' => 'By using our Service, you acknowledge that you have read and understood our Privacy Policy and consent to the data practices described therein.',
 	],
 
 	'termination' => [
@@ -170,7 +182,7 @@ return [
 		'description' => 'If you have any questions about these Terms of Use, please contact us:',
 		'info' => [
 			'title' => 'Contact Information:',
-			'email' => 'Email: '.$legalEmail,
+			'email' => 'Email: ' . $legalEmail,
 			'response' => 'We will respond to your inquiry within 5 business days.',
 		],
 	],
