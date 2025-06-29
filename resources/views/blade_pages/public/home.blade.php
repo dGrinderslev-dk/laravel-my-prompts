@@ -64,10 +64,15 @@
 					{{ __('pages/public/home.heroSection.text') }}
 				</p>
 				<div
-				x-cloak="bevarplads"
-				:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-700 ease-out' : 'opacity-0 translate-y-[30px] blur-[5px]'"
-				class="delay-1200 will-change-transform flex justify-center gap-2 mt-6 md:mt-10">
-					<x-shared.button buttonColor="primary" label="{{ __('pages/public/home.heroSection.primaryBtn') }}" />
+					x-cloak="bevarplads"
+					:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-700 ease-out' : 'opacity-0 translate-y-[30px] blur-[5px]'"
+					class="delay-1200 will-change-transform flex justify-center gap-2 mt-6 md:mt-10"
+				>
+					<x-shared.button
+						buttonColor="primary"
+						label="{{ __('pages/public/home.heroSection.primaryBtn') }}"
+						href="{{ route('register') }}"
+					/>
 					<div x-data="{videoModalIsOpen: false}">
 							<button x-on:click="videoModalIsOpen = true, $refs.video.play()" type="button" class="inline-flex items-center gap-2 bg-transparent rounded-radius px-4 py-2 text-center text-sm font-medium tracking-wide text-primary transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:text-primary-dark dark:focus-visible:outline-primary-dark cursor-pointer">
 									<x-shared.svg.icons.pui.play-fill aria-hidden="true" fill="currentColor" class="w-4 h-4" />

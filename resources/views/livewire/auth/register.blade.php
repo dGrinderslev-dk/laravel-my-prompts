@@ -21,6 +21,7 @@ new #[Layout('components.layouts.auth', [
     public string $email = '';
     public string $password = '';
     public string $password_confirmation = '';
+    public bool $accept_terms = false;
 
     /**
      * Handle an incoming registration request.
@@ -46,6 +47,7 @@ new #[Layout('components.layouts.auth', [
                     }
                 },
             ],
+            'accept_terms' => ['required', 'accepted'],
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
@@ -121,6 +123,16 @@ new #[Layout('components.layouts.auth', [
             required
             autocomplete="new-password"
             placeholder="{{ __('pages/auth/register.password_confirmation.placeholder') }}"
+        />
+
+        {{-- Accept Terms & Privacy Policy --}}
+        <x-shared.input.checkbox
+            wire:model="accept_terms"
+            id="accept_terms"
+            name="accept_terms"
+            required
+            labelHTML="{!! __('pages/auth/register.accept_terms.label', ['route_privacy' => route('public.public-pages.cookies-and-privacy-policy'), 'route_terms' => route('public.public-pages.terms-of-use')]) !!}"
+            :hasCheckedStrongStyling="false"
         />
 
         {{-- Submit button --}}
