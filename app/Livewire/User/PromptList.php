@@ -24,15 +24,6 @@ class PromptList extends Component
         }
     }
 
-    /*
-    public function copyPrompt(int $id): void
-    {
-        $prompt = Prompt::findOrFail($id);
-        $this->authorize('view', $prompt);
-        $this->dispatch('clipboard-copy', promptContent: $prompt->content);
-    }
-    */
-
     public function deletePrompt(int $id): void
     {
         $prompt = Prompt::findOrFail($id);

@@ -35,19 +35,16 @@
 
 				<div class="{{-- flex pointer-fine:hidden group-hover:flex --}} hidden group-hover:flex items-center gap-2">
 					<x-shared.button
-						x-data="{
-							copied: false,
-							content: @js($prompt->content),
-						}"
+						x-data="{ copied: false }"
 						x-on:click="
-							navigator.clipboard.writeText(content)
+							navigator.clipboard.writeText($el.dataset.promptcontent)
 								.then(() => {
 									copied = true;
 									setTimeout(() => { copied = false; }, 2000);
 								})
 								.catch(err => console.error(err))
 						"
-						{{-- wire:click="copyPrompt({{ $prompt->id }})" --}}
+						data-promptcontent="{{ $prompt->content }}"
 						buttonColor="alternate"
 						buttonStyle="floating_action_button"
 						buttonSize="xs"

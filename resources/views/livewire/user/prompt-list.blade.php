@@ -17,14 +17,7 @@
         class="!max-w-5xl"
     />
 
-    <div
-        {{--
-        x-data
-        x-on:clipboard-copy.window="navigator.clipboard.writeText($event.detail.promptContent);"
-        --}}
-        class="w-full max-w-5xl gap-2 md:gap-3 lg:gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"
-    >
-    
+    <div class="w-full max-w-5xl gap-2 md:gap-3 lg:gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {{--
         <h2 class="text-xl mb-3">{{ __($headerKey, $headerParams) }}</h2>
         <h3 class="text-lg mb-3">Du har søgt: {{ $search }}</h3>
