@@ -220,8 +220,8 @@ class DatabaseSeeder extends Seeder
 
         //USER_MARKETING
         $user = User::factory()->create([
-            'name' => 'michael_smith_1',
-            'email' => 'michael.smith@example.com',
+            'name' => env('USER_MARKETING_NAME'),
+            'email' => env('USER_MARKETING_EMAIL'),
             'password' => Hash::make(env('USER_MARKETING_PASSWORD')),
         ]);
 
@@ -299,30 +299,22 @@ class DatabaseSeeder extends Seeder
                 $promptModels[] = $prompt;
             }
         }
-
-
-        /*
-        $user2 = User::factory()->create([
-            'email' => 'test@mail.dk',
-            'password' => Hash::make(env('USER_MARKETING_PASSWORD')),
+        
+        /* ADMIN USER */
+        $adminUser = User::factory()->create([
+            'name' => env('USER_ADMIN_NAME'),
+            'email' => env('USER_ADMIN_EMAIL'),
+            'password' => Hash::make(env('USER_ADMIN_PASSWORD')),
+            'role' => 'admin',
         ]);
 
         PublicProfile::factory()->create([
-            'user_id' => $user2->id,
+            'user_id' => $adminUser->id,
         ]);
 
         UserSetting::factory()->create([
-            'user_id' => $user2->id,
+            'user_id' => $adminUser->id,
         ]);
-
-        $category2 = Category::factory()->create([
-            'user_id' => $user2->id,
-        ]);
-
-        $prompt2 = Prompt::factory()->create([
-            'user_id' => $user2->id,
-        ]);
-        */
 
 
     }
