@@ -1,6 +1,6 @@
 @prepend('head')
     {{-- @vite(['resources/js/alpine.js']) --}}
-	@vite('resources/css/layouts/guest.css')
+    {{-- @vite('resources/css/layouts/guest.css') --}}
 @endprepend
 
 @prepend('closingBody')

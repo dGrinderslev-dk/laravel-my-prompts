@@ -1,5 +1,5 @@
 @prepend('head')
-	@vite('resources/css/layouts/auth.css')
+    {{-- @vite('resources/css/layouts/auth.css') --}}
 @endprepend
 
 @props([

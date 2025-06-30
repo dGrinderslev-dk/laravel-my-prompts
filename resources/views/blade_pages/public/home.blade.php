@@ -1,5 +1,5 @@
 @prepend('head')
-	@vite('resources/css/pages/public/home.css')
+	{{-- @vite('resources/css/pages/public/home.css') --}}
 @endprepend
 
 @prepend('styles')

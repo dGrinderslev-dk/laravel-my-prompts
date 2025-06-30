@@ -16,7 +16,7 @@ export default defineConfig({
             ],
             refresh: true,
             // ////=== TILFØJELSE START ===////
-            buildDirectory: 'build', // Deaktiver CSS preloading
+            //buildDirectory: 'build', // Deaktiver CSS preloading
             // ////=== TILFØJELSE SLUT ===////
         }),
         tailwindcss(),

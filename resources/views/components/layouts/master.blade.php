@@ -12,6 +12,20 @@
     } else {
         $quickColorMode = $color_mode === 'dark' ? 'dark' : '';
     }
+
+    // ////=== TILFØJELSE START ===////
+    // Detekter hvilken layout der bruges baseret på route
+    $currentRoute = request()->route()->getName();
+    $isGuestLayout = str_starts_with($currentRoute, 'public.');
+    $isAuthLayout = $currentRoute === 'login' || $currentRoute === 'register';
+
+    if ($isGuestLayout) {
+        logger('vi er på GuestLayout');
+    }
+    if ($isAuthLayout) {
+        logger('vi er på AuthLayout');
+    }
+    // ////=== TILFØJELSE SLUT ===////
 @endphp
 
 <!DOCTYPE html>
@@ -60,7 +74,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
         --}}
 
+        {{-- ////=== ÆNDRING START ===//// --}}
+        @if ($isAuthLayout)
+            @vite(['resources/css/app.css', 'resources/css/layouts/auth.css', 'resources/js/app.js'])
+        @elseif ($isGuestLayout)
+            @vite(['resources/css/app.css', 'resources/css/layouts/guest.css', 'resources/js/app.js'])
+        @else
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @endif
+        {{-- ////=== ÆNDRING SLUT ===//// --}}
+        
+        {{--
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        --}}
         @stack('head') {{-- Akkumulerede stylesheets osv fra layout templates og pages --}}
         @stack('styles') {{-- Akkumulerede style-tags fra layout templates og pages --}}
     </head>
