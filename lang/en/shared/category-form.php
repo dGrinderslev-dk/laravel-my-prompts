@@ -4,15 +4,15 @@ return [
 	'inputs' => [
 		'name' => [
 			'label' => 'Name',
-			'placeholder' => 'My category name...',
+			'placeholder' => 'My example category...',
 		],
 		'description' => [
 			'label' => 'Description',
-			'placeholder' => 'My category description...',
+			'placeholder' => 'My description of my example category...',
 		],
 		'slug' => [
-			'label' => 'URL slug',
-			'placeholder' => 'my-category-slug',
+			'label' => 'Slug (lowercase letters,numbers,underscores,hyphens)',
+			'placeholder' => 'my-example-category',
 		],
 		'submit_btn' => [
 			'create' => 'Create',

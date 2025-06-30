@@ -8,7 +8,7 @@ return [
 		'warningInsideModal' => 'This will permanently delete your account and all associated data. To continue, please confirm by entering your password.',
 		'password' => [
 			'label' => 'Password',
-			'placeholder' => 'Enter your password...',
+			'placeholder' => 'Enter your password',
 		],
 		'cancel_btn' => 'Cancel',
 		'submit_btn' => 'Delete account',

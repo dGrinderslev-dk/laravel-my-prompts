@@ -239,28 +239,28 @@ class DatabaseSeeder extends Seeder
 
         $categories = [
             'Graphic Design' => [
-                'description' => '',
+                'description' => 'Professional visual design solutions including infographics, business cards, packaging, print ads, and comprehensive brand style guides.',
             ],
             'Advertising and Campaigns' => [
-                'description' => '',
+                'description' => 'Strategic advertising campaigns across multiple channels with creative development, performance analysis, and optimization strategies.',
             ],
             'Email Marketing' => [
-                'description' => '',
+                'description' => 'Complete email marketing solutions from welcome series to newsletters, cart recovery, segmentation, and re-engagement campaigns.',
             ],
             'Blog Posts' => [
-                'description' => '',
+                'description' => 'Engaging blog content including industry analysis, how-to guides, case studies, thought leadership articles, and product comparisons.',
             ],
             'Logo and Branding' => [
-                'description' => '',
+                'description' => 'Comprehensive brand identity development including logo design, color systems, typography, positioning, and brand guidelines.',
             ],
             'Social Media Posts' => [
-                'description' => '',
+                'description' => 'Creative social media content strategies for Instagram, LinkedIn, Twitter, Facebook, and TikTok with engaging visuals and copy.',
             ],
             'SEO Optimization' => [
-                'description' => '',
+                'description' => 'Technical and content SEO strategies including keyword research, on-page optimization, local SEO, and link building campaigns.',
             ],
             'Product Descriptions' => [
-                'description' => '',
+                'description' => 'Compelling product copy for e-commerce, luxury goods, technical specifications, benefit-focused descriptions, and product bundles.',
             ],
         ];
 

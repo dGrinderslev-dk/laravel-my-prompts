@@ -4,7 +4,7 @@ return [
 	'inputs' => [
 		'title' => [
 			'label' => 'Title',
-			'placeholder' => 'My prompt title...',
+			'placeholder' => 'My example prompt...',
 		],
 		'type' => [
 			'outerlabel' => 'Choose prompt-type',
@@ -16,7 +16,7 @@ return [
 		],
 		'content' => [
 			'label' => 'Content',
-			'placeholder' => 'My prompt content...',
+			'placeholder' => 'This is the content of my example prompt...',
 		],
 		'category_id' => [
 			'label' => 'Category',

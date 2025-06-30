@@ -20,6 +20,7 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         if (app()->isProduction()) {
+            //[$message, $author] = str(\Illuminate\Foundation\Inspiring::quotes()->random())->explode('-');
             $categories = [
                 'AI Prompts',
                 'Creative Writing',
@@ -39,11 +40,13 @@ class CategoryFactory extends Factory
                 'Product Descriptions',
             ];
             $name = Arr::random($categories);
+            //$description = trim($message);
             $userCreatedAt = now()->subDays(rand(5, 6));
             $categoryCreatedAt = now()->subDays(rand(3, 4));
             $categoryUpdatedAt = now()->subDays(rand(0, 2));
         } else {
             $name = fake()->words(rand(2, 6), true);
+            //$description = fake()->words(rand(4, 8), true);
             $userCreatedAt = fake()->dateTimeBetween('-6 days', '-5 days');
             $categoryCreatedAt = fake()->dateTimeBetween($userCreatedAt, '-3 days');
             $categoryUpdatedAt = fake()->dateTimeBetween($categoryCreatedAt, 'now');
@@ -52,6 +55,7 @@ class CategoryFactory extends Factory
         return [
             'user_id' => User::factory(), // Evt. generer tilknyttet bruger
             'name' => $name,
+            //'description' => $description,
             'slug' => Str::slug($name),
             'created_at' => $categoryCreatedAt,
             'updated_at' => $categoryUpdatedAt,
