@@ -18,4 +18,25 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+
+
+
+    // ////=== TILFØJELSE START ===////
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: undefined,
+            }
+        }
+    },
+    experimental: {
+        renderBuiltUrl(filename, { hostType }) {
+            if (hostType === 'css') {
+                return { relative: true };
+            }
+        }
+    }
+    // ////=== TILFØJELSE SLUT ===////
+
+
 });
