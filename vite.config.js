@@ -15,28 +15,10 @@ export default defineConfig({
                 // 'resources/js/alpine.js',
             ],
             refresh: true,
+            // ////=== TILFØJELSE START ===////
+            buildDirectory: 'build', // Deaktiver CSS preloading
+            // ////=== TILFØJELSE SLUT ===////
         }),
         tailwindcss(),
     ],
-
-
-
-    // ////=== TILFØJELSE START ===////
-    build: {
-        rollupOptions: {
-            output: {
-                manualChunks: undefined,
-            }
-        }
-    },
-    experimental: {
-        renderBuiltUrl(filename, { hostType }) {
-            if (hostType === 'css') {
-                return { relative: true };
-            }
-        }
-    }
-    // ////=== TILFØJELSE SLUT ===////
-
-
 });
