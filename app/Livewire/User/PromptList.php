@@ -24,12 +24,14 @@ class PromptList extends Component
         }
     }
 
+    /*
     public function copyPrompt(int $id): void
     {
         $prompt = Prompt::findOrFail($id);
         $this->authorize('view', $prompt);
         $this->dispatch('clipboard-copy', promptContent: $prompt->content);
     }
+    */
 
     public function deletePrompt(int $id): void
     {
@@ -55,7 +57,7 @@ class PromptList extends Component
             $prompts = auth()->user()->prompts();
         }
 
-        $prompts->select('id', 'title', 'type', 'excerpt', 'created_at', 'updated_at', 'category_id');
+        $prompts->select('id', 'title', 'type', 'content', 'excerpt', 'created_at', 'updated_at', 'category_id');
         $prompts->with(['category:id,name,slug']);
 
         if ($this->search !== '') {

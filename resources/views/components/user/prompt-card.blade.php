@@ -34,18 +34,20 @@
 				</div>
 
 				<div class="{{-- flex pointer-fine:hidden group-hover:flex --}} hidden group-hover:flex items-center gap-2">
-					@php
-						$copyTitle = 'pages/user/prompt-list.promptCard.copy.title';
-						$copiedTitle = 'pages/user/prompt-list.promptCard.copied.title';
-					@endphp
-
 					<x-shared.button
-						x-data="{copied: false}"
+						x-data="{
+							copied: false,
+							content: @js($prompt->content),
+						}"
 						x-on:click="
-							copied = true;
-							setTimeout(() => { copied = false; }, 2000);
+							navigator.clipboard.writeText(content)
+								.then(() => {
+									copied = true;
+									setTimeout(() => { copied = false; }, 2000);
+								})
+								.catch(err => console.error(err))
 						"
-						wire:click="copyPrompt({{ $prompt->id }})"
+						{{-- wire:click="copyPrompt({{ $prompt->id }})" --}}
 						buttonColor="alternate"
 						buttonStyle="floating_action_button"
 						buttonSize="xs"
@@ -58,7 +60,7 @@
 						customPadding="p-1"
 						customOutlineColor="primary"
 						customOutlineColorDark="primary-dark"
-						x-bind:title="copied ? '{{ __( $copiedTitle ) }}' : '{{ __( $copyTitle ) }}'"
+						x-bind:title="copied ? '{{ __( 'pages/user/prompt-list.promptCard.copied.title' ) }}' : '{{ __( 'pages/user/prompt-list.promptCard.copy.title' ) }}'"
 					>
 						<x-shared.svg.icons.bootstrap.clipboard-check
 							x-show="copied"
