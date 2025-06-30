@@ -49,10 +49,8 @@ class extends Component {
 >
     @csrf
 
-    <x-shared.input.radio.container
-        wire:model.live="color_mode"
-        wire:change="updateColorMode()"
-        :choices="[
+    @php
+        $choices = [
             [
                 'id' => 'color_mode_light',
                 'label' => __('pages/user/settings/appearance.inputs.color_mode.label.light'),
@@ -65,18 +63,26 @@ class extends Component {
                 'checked' => false,
                 'value' => 'dark',
             ],
+            /*
             [
                 'id' => 'color_mode_system',
                 'label' => __('pages/user/settings/appearance.inputs.color_mode.label.system'),
                 'checked' => true,
                 'value' => 'system',
             ],
-        ]"
+            */
+        ];
+    @endphp
+
+    <x-shared.input.radio.container
+        wire:model.live="color_mode"
+        wire:change="updateColorMode()"
+        :choices="$choices"
         name="color_mode"
-        labelclasses="!min-w-26 max-md:w-full! md:max-lg:w-1/2! lg:w-full!"
+        labelclasses="!min-w-26 max-md:w-full! {{ count($choices) > 2 ? 'md:max-lg:w-1/2!' : 'md:max-lg:w-full!' }} lg:w-full!"
         outerclasses=""
         outerlabel="{{ __('pages/user/settings/appearance.inputs.color_mode.outerlabel') }}"
-        choicesouterclasses="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-2"
+        choicesouterclasses="flex flex-col sm:flex-row {{ count($choices) > 2 ? 'md:flex-col' : 'md:flex-row' }} lg:flex-row gap-2"
         required
     />
 
