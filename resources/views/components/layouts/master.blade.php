@@ -18,13 +18,6 @@
     $currentRoute = request()->route()->getName();
     $isGuestLayout = str_starts_with($currentRoute, 'public.');
     $isAuthLayout = $currentRoute === 'login' || $currentRoute === 'register';
-
-    if ($isGuestLayout) {
-        logger('vi er på GuestLayout');
-    }
-    if ($isAuthLayout) {
-        logger('vi er på AuthLayout');
-    }
     // ////=== TILFØJELSE SLUT ===////
 @endphp
 
@@ -44,6 +37,9 @@
         applyColorMode();
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             prefersDark = e.matches;
+            applyColorMode();
+        });
+        document.addEventListener('livewire:navigated', () => {
             applyColorMode();
         });
     "

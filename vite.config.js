@@ -15,9 +15,6 @@ export default defineConfig({
                 // 'resources/js/alpine.js',
             ],
             refresh: true,
-            // ////=== TILFØJELSE START ===////
-            //buildDirectory: 'build', // Deaktiver CSS preloading
-            // ////=== TILFØJELSE SLUT ===////
         }),
         tailwindcss(),
     ],
