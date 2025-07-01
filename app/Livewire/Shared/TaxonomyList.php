@@ -9,10 +9,17 @@ use Livewire\Component;
 class TaxonomyList extends Component
 {
     public array $collapsibleItem;
+    public string $routeName = '';
+    public int $currentRouteCategoryId = 0;
 
     public function mount(array $collapsibleItem)
     {
         $this->collapsibleItem = $collapsibleItem;
+        $this->routeName = request()->route()->getName();
+        if ($this->routeName === 'user.user-categories.show') {
+            $categoryId = request()->route('category')?->id;
+            $this->currentRouteCategoryId = $categoryId;
+        }
     }
 
     #[Computed]

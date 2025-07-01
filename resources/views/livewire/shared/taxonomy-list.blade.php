@@ -8,7 +8,7 @@
     >
         @forelse ($this->categories as $category)
             @php
-                $isCurrent = request()->routeIs('user.user-categories.show') && request()->route('category')->id === $category->id;
+                $isCurrent = $this->routeName === 'user.user-categories.show' && $this->currentRouteCategoryId === $category->id;
             @endphp
             <li class="px-1 py-0.5 first:mt-2 relative group" :key="'category-'.$category->id">
                 <a wire:navigate href="{{ route('user.user-categories.show', ['category' => $category->id]) }}" class="{{ $isCurrent ? 'text-on-surface-strong bg-primary/10 dark:text-on-surface-dark-strong dark:bg-primary-dark/10' : 'text-on-surface group-hover:bg-primary/5 group-hover:text-on-surface-strong dark:text-on-surface-dark dark:group-hover:text-on-surface-dark-strong dark:group-hover:bg-primary-dark/5' }} flex items-center rounded-radius gap-2 px-2 py-1.5 text-sm underline-offset-2 focus:outline-hidden focus-visible:underline">
@@ -25,8 +25,8 @@
                         });
                         $dispatch('edit-taxonomy', {
                             id: {{ $category->id }},
-                            currentRoute: '{{ request()->route()->getName() }}',
-                            currentRouteCategoryId: {{ request()->routeIs('user.user-categories.show') ? request()->route('category')->id : 0 }},
+                            currentRoute: '{{ $this->routeName }}',
+                            currentRouteCategoryId: {{ $this->routeName === 'user.user-categories.show' ? $this->currentRouteCategoryId : 0 }},
                         });
                     "
                     buttonColor="alternate"
