@@ -174,16 +174,18 @@ class CategoryForm extends Component
                 'close-modal',
                 id: 'taxonomy-modal',
             );
-            $this->category->delete();
 
             if (
                 $this->currentRoute === 'user.user-categories.show'
                 && $this->currentRouteCategoryId === $deletedCategoryId
             ) {
-                logger('vi er i den route som er sletet');
+                logger('vi er i den route som skal slettes');
                 $this->redirect(route('user.user-prompts.uncategorized', absolute: false), navigate: false);
             }
-            
+
+            $this->category->delete();
+
+
             //$this->category->delete();
             logger('så er den slettet');
             logger('her er cat igen $this->category');
