@@ -39,14 +39,18 @@
             prefersDark = e.matches;
             applyColorMode();
         });
+        {{--
         document.addEventListener('livewire:navigated', () => {
             applyColorMode();
         });
+        --}}
     "
+    {{--
     x-on:color_mode-updated="
         color_mode = $event.detail.color_mode;
         applyColorMode();
     "
+    --}}
     lang="{{ str_replace('_', '-', app()->getLocale()) }}"
 >
     <head>

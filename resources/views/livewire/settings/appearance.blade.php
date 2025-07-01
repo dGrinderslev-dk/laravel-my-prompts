@@ -25,7 +25,7 @@ class extends Component {
     /**
      * Update the color_mode for the currently authenticated user.
      */
-    public function updateColorMode(): void
+    public function updateColorMode()
     {
         $userSettings = Auth::user()->settings;
 
@@ -40,7 +40,12 @@ class extends Component {
 
         $userSettings->save();
 
+        // Tving siden til at reloade
+        return redirect(request()->header('Referer'));
+        
+        /*
         $this->dispatch('color_mode-updated', color_mode: $this->color_mode);
+        */
     }
 }; ?>
 

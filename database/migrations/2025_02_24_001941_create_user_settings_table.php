@@ -28,7 +28,7 @@ return new class extends Migration
                 'light',
                 'dark',
                 'system',
-            ])->default('dark');
+            ])->default('light');
 
             /*
             // Tema
