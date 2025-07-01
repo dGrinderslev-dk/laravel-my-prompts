@@ -179,9 +179,10 @@ class CategoryForm extends Component
                 $this->currentRoute === 'user.user-categories.show'
                 && $this->currentRouteCategoryId === $deletedCategoryId
             ) {
-                logger('vi er i den route som skal slettes');
+                logger('vi er i den route som skal slettes og vi skal til at slette om lidt');
                 //$this->redirect(route('user.user-prompts.uncategorized', absolute: false), navigate: false);
-                $this->js('window.location.href = "' . route('user.user-prompts.uncategorized') . '"');
+                //$this->redirect(route('user.user-prompts.uncategorized'), navigate: true);
+                //$this->js('window.location.href = "' . route('user.user-prompts.uncategorized') . '"');
             }
 
             $this->category->delete();
@@ -204,6 +205,14 @@ class CategoryForm extends Component
                 id: $deletedCategoryId,
                 action: 'delete', // 'delete'|'update'|'create'
             );
+
+            if (
+                $this->currentRoute === 'user.user-categories.show'
+                && $this->currentRouteCategoryId === $deletedCategoryId
+            ) {
+                logger('vi er i den route som skal slettes og den er nu slettet. lad os redirect');
+                return $this->redirect(route('user.user-prompts.uncategorized', absolute: false), navigate: false);
+            }
         }
     }
 
