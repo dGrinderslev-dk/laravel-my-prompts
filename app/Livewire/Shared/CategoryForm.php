@@ -180,7 +180,8 @@ class CategoryForm extends Component
                 && $this->currentRouteCategoryId === $deletedCategoryId
             ) {
                 logger('vi er i den route som skal slettes');
-                $this->redirect(route('user.user-prompts.uncategorized', absolute: false), navigate: false);
+                //$this->redirect(route('user.user-prompts.uncategorized', absolute: false), navigate: false);
+                $this->js('window.location.href = "' . route('user.user-prompts.uncategorized') . '"');
             }
 
             $this->category->delete();
