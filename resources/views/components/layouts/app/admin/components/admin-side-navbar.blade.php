@@ -19,6 +19,12 @@
 									'label' => 'shared/navigation_links.admin__admin_pages__admin_dashboard.default',
 									'class' => '',
 							],
+							[
+									'route' => 'admin.admin-pages.users-overview',
+									'btnIcon' => 'bootstrap.gear',
+									'label' => 'shared/navigation_links.admin__admin_pages__users_overview',
+									'class' => '',
+							],
 					];
 			@endphp
 			@foreach ($linkItems as $linkItem)

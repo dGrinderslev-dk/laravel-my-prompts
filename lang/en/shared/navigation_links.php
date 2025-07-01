@@ -22,6 +22,7 @@ return [
 		'guestHeaderNavMenu' => 'Admin',
 		'backToAdminDashboard' => 'Back to Admin Dashboard',
 	],
+	'admin__admin_pages__users_overview' => 'Users Overview',
 	'public__public_pages__home' => 'Home page',
 	'public__public_pages__home#' => [
 		'heroSection' => 'Demo',
