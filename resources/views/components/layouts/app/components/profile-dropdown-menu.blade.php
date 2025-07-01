@@ -51,6 +51,17 @@
                 ],
             ],
         ];
+
+        if (optional(auth()->user())->hasRole('admin')) {
+            $adminGroup = [
+                [
+                    'route' => 'admin.admin-pages.admin-dashboard',
+                    'btnIcon' => 'bootstrap.gear',
+                    'label' => 'shared/navigation_links.admin__admin_pages__admin_dashboard.default',
+                ],
+            ];
+            array_unshift($groupsAndMenuItems, $adminGroup);
+        }
     @endphp
 
     {{-- Indholdet i dropdown-menu --}}

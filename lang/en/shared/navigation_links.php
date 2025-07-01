@@ -17,6 +17,11 @@ return [
 	'register' => 'Sign Up',
 	'login' => 'Log In',
 	'logout' => 'Log Out',
+	'admin__admin_pages__admin_dashboard' => [
+		'default' => 'Admin Dashboard',
+		'guestHeaderNavMenu' => 'Admin',
+		'backToAdminDashboard' => 'Back to Admin Dashboard',
+	],
 	'public__public_pages__home' => 'Home page',
 	'public__public_pages__home#' => [
 		'heroSection' => 'Demo',

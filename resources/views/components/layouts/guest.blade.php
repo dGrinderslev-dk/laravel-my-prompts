@@ -46,8 +46,8 @@
             'translation_key' => 'shared/navigation_links.login'
         ];
         $dashboardLink = [
-            'route' => 'user.user-prompts.all',
-            'translation_key' => 'shared/navigation_links.user__user_prompts__all.guestHeaderNavMenu'
+            'route' => (optional(auth()->user())->hasRole('admin') ? 'admin.admin-pages.admin-dashboard' : 'user.user-prompts.all'),
+            'translation_key' => (optional(auth()->user())->hasRole('admin') ? 'shared/navigation_links.admin__admin_pages__admin_dashboard.guestHeaderNavMenu' : 'shared/navigation_links.user__user_prompts__all.guestHeaderNavMenu'),
         ];
     @endphp
 

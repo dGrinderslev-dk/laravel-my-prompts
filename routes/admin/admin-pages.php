@@ -3,6 +3,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/admin_test', function () { // `/admin/admin_test` (har `/admin` prefixed til url)
-	return view('blade_pages.admin.admin_test');
-})->name('admin.admin-pages.admin');
+Route::get('/admin-dashboard', function () { // `/admin/admin-dashboard` (har `/admin` prefixed til url)
+	return view('blade_pages.admin.admin-dashboard');
+})->name('admin.admin-pages.admin-dashboard');

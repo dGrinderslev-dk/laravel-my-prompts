@@ -12,23 +12,23 @@ $appName = config('app.name');
 */
 
 return [
-  // layout template standard værdier (feks resources/views/components/layouts/admin.blade.php har short key "components__layouts__admin")
-  'components__layouts__admin' => $appName . $separator . 'Admin',
+  // layout template standard værdier (feks resources/views/components/layouts/guest.blade.php har short key "components__layouts__guest")
   'components__layouts__app' => $appName . $separator . 'Welcome back!',
   'components__layouts__app__settings' => $appName . $separator . 'Settings',
+  'components__layouts__app__admin' => $appName . $separator . 'Admin',
   'components__layouts__auth' => $appName . $separator . 'Signup/Login',
   'components__layouts__guest' => $appName,
   'components__layouts__master' => $appName,
   'components__layouts__publicprofile' => $appName . $separator . 'Public Profile',
 
   // views standard værdier (feks resources/views/eksempel-mappe/eksempelUndermappe/mit-eksempel-view.blade.php har short key "eksempel_mappe__eksempelundermappe__mit_eksempel_view")
+  'blade_pages__admin__admin_dashboard' => $appName . $separator . 'Admin Dashboard',
   'blade_pages__public__home' => $appName,
   'blade_pages__public__cookies_and_privacy_policy' => $appName . $separator . 'Cookies & Privacy Policy',
   'blade_pages__public__terms_of_use' => $appName . $separator . 'Terms of Use',
   'blade_pages__user__settings__taxonomy' => $appName . $separator . 'Settings Tags/Categories',
   'livewire__auth__register' => $appName . $separator . 'Register',
   'livewire__auth__login' => $appName . $separator . 'Login',
-  'livewire__user__admintest' => $appName . $separator . 'Admin test',
   'livewire__user__prompt_list' => $appName . $separator . 'Prompts',
   'livewire__user__prompt_form' => $appName . $separator . 'Create or update prompt',
   'livewire__settings__profile' => $appName . $separator . 'Profile Settings',
