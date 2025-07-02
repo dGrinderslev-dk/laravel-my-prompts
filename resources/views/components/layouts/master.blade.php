@@ -64,7 +64,10 @@
         @endif
 
         <meta charset="utf-8">
+        {{--
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        --}}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
         <title>{{ __($titleKey, $titleParams) ?? config('app.name', 'Laravel') }}</title>
 
         {{-- Fonts (bruges ikke da de leveres lokalt) --}}
