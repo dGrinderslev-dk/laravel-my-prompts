@@ -4,6 +4,7 @@ namespace App\Livewire\User;
 
 use App\Models\Category;
 use App\Models\Prompt;
+use Illuminate\Database\Eloquent\Builder;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -52,10 +53,10 @@ class PromptList extends Component
         $prompts->with(['category:id,name,slug']);
 
         if ($this->search !== '') {
-            $prompts->whereAny([
-                'title',
-                'content',
-            ], 'like', "%{$this->search}%");
+            $prompts->where(function (Builder $query) {
+                $query->whereLike('title', "%{$this->search}%")
+                ->orWhereLike('content', "%{$this->search}%");
+            });
         }
 
         $prompts->latest();
