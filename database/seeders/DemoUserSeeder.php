@@ -14,11 +14,13 @@ class DemoUserSeeder extends Seeder
      */
     public function run(): void
     {
+        /*
         $user1 = User::factory()->create([
             'name' => env('USER_DEMO1_NAME'),
             'email' => env('USER_DEMO1_EMAIL'),
             'password' => Hash::make(env('USER_DEMO1_PASSWORD')),
         ]);
+        */
 
         $user2 = User::factory()->create([
             'name' => env('USER_DEMO2_NAME'),
