@@ -249,7 +249,7 @@
                                 &copy {{ date("Y") }} {{ __('pages/public/home.footer.copyright.rights_reserved') }}
                             </p>
                             <p class="font-light text-on-surface/90 dark:text-on-surface-dark/90 text-xs">
-                                {{ __('pages/public/home.footer.credits.prefix') }} <a href="https://layoutlive.dk/" target="_blank" class="font-light text-on-surface/90 dark:text-on-surface-dark/90 underline-offset-2 hover:text-on-surface-strong/90 focus:outline-hidden focus:underline dark:hover:text-primary-dark/90 transition text-xs">{{ __('pages/public/home.footer.credits.link_label') }}</a>
+                                {{ __('pages/public/home.footer.credits.prefix') }} <a href="https://layoutlive.dk/" rel="noopener" target="_blank" class="font-light text-on-surface/90 dark:text-on-surface-dark/90 underline-offset-2 hover:text-on-surface-strong/90 focus:outline-hidden focus:underline dark:hover:text-primary-dark/90 transition text-xs">{{ __('pages/public/home.footer.credits.link_label') }}</a>
                             </p>
                         </div>
 
@@ -271,6 +271,7 @@
                                         <li>
                                             <a
                                                 href="{{ $socialLink['href'] }}"
+                                                rel="nofollow noopener"
                                                 target="_blank"
                                                 class="text-on-surface dark:text-on-surface-dark underline-offset-2 hover:text-on-surface-strong focus:outline-hidden focus:underline dark:hover:text-primary-dark transition"
                                             >
