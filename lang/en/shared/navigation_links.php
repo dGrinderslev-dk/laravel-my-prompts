@@ -16,7 +16,7 @@
 return [
 	'register' => 'Sign Up',
 	'login' => 'Log In',
-	'logout' => 'Log Out',
+	'logout' => 'Log out',
 	'admin__admin_pages__admin_dashboard' => [
 		'default' => 'Admin Dashboard',
 		'guestHeaderNavMenu' => 'Admin',

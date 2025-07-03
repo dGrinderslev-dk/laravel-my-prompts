@@ -101,7 +101,6 @@ class PromptList extends Component
             'user.user-categories.show' => 'pages/user/prompt-list.header.user__user_categories__show',
         };
         $headerParams = [
-            'count' => $promptCount,
         ];
 
         $afterHeader = '';
@@ -128,6 +127,7 @@ class PromptList extends Component
 
         return view('livewire.user.prompt-list', compact(
                 'headerKey',
+                'promptCount',
                 'headerParams',
                 'afterHeader',
                 'afterHeaderHTML',

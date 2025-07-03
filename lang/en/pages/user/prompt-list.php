@@ -2,9 +2,9 @@
 
 return [
 	'header' => [
-		'user__user_categories__show' => ':count prompts in category "',
-		'user__user_prompts__all' => 'You have :count prompts in total',
-		'user__user_prompts__uncategorized' => 'You have :count uncategorized prompts',
+		'user__user_prompts__all' => '{0} You have no prompts|{1} You have :count prompt in total|[2,*] You have :count prompts in total',
+		'user__user_prompts__uncategorized' => '{0} You have no uncategorized prompts|{1} You have :count uncategorized prompt|[2,*] You have :count uncategorized prompts',
+		'user__user_categories__show' => '{0} No prompts in category "|{1} :count prompt in category "|[2,*] :count prompts in category "',
 	],
 	'subHeader' => [
 		'search' => 'That contains the phrase "',
