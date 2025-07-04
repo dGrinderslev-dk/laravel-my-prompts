@@ -23,7 +23,7 @@
                 placeholder="{{ __('pages/user/prompt-form.inputs.title.placeholder') }}"
                 outerClass=""
                 {{-- slet dette igen bagefter --}}
-                autocomplete="off"
+                autocomplete="given-name"
                 {{-- slet dette igen bagefter --}}
             />
     
@@ -98,7 +98,7 @@
                 placeholder="{{ __('pages/user/prompt-form.inputs.content.placeholder') }}"
                 outerclasses="!max-w-full"
                 {{-- slet dette igen bagefter --}}
-                autocomplete="given-name"
+                autocomplete="family-name"
                 {{-- slet dette igen bagefter --}}
 
             />
