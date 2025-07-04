@@ -146,13 +146,13 @@ $features = [
 		'id' => 'promptList_interface',
 		'icon' => 'bootstrap.card-heading',
 		'iconBoxColor' => 'bg-[#245AC4]',
-		'imgSrc' => 'images/blade_pages/public/home/feature-1.jpg',
+		'imgSrc' => 'images/blade_pages/public/home/feature-1-dark.png',
 	],
 	[
 		'id' => 'promptForm_interface',
 		'icon' => 'pui.pencil-square',
 		'iconBoxColor' => 'bg-[#0A96AC]',
-		'imgSrc' => 'images/blade_pages/public/home/feature-2.jpg',
+		'imgSrc' => 'images/blade_pages/public/home/feature-2-dark.jpg',
 	],
 	[
 		'id' => 'copying',
@@ -254,7 +254,7 @@ $features = [
 							:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-400 ease-out' : 'opacity-0 translate-y-[20px] blur-[2px]'"
 							class="delay-800 will-change-transform p-6 pt-0"
 							>
-								<img src="{{ asset($feature['imgSrc']) }}" alt="{{ __('pages/public/home.featureSection.featureCardsImg.'.$feature['id']) }}">
+								<img src="{{ asset($feature['imgSrc']) }}" alt="{{ __('pages/public/home.featureSection.featureCardsImg.'.$feature['id']) }}" class="{{ false ? 'border dark:border-surface-dark-alt' : 'border border-outline dark:border-outline-dark' }}">
 							</figure>
 						@endif
 					</div>
