@@ -22,9 +22,6 @@
                 autofocus
                 placeholder="{{ __('pages/user/prompt-form.inputs.title.placeholder') }}"
                 outerClass=""
-                {{-- slet dette igen bagefter --}}
-                autocomplete="given-name"
-                {{-- slet dette igen bagefter --}}
             />
     
             {{-- prompt type --}}
@@ -56,9 +53,6 @@
                 outerlabel="{{ __('pages/user/prompt-form.inputs.type.outerlabel') }}"
                 choicesouterclasses="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-2"
                 required
-                {{-- slet dette igen bagefter --}}
-                autocomplete="off"
-                {{-- slet dette igen bagefter --}}
             />
     
             {{-- Category_id --}}
@@ -82,9 +76,6 @@
                 :useWireKey="true"
                 wireKeyPrefix="category"
                 outerclasses="!max-w-full max-sm:w-full! sm:w-1/2!"
-                {{-- slet dette igen bagefter --}}
-                autocomplete="off"
-                {{-- slet dette igen bagefter --}}
             />
     
             {{-- Content --}}
@@ -97,10 +88,6 @@
                 required
                 placeholder="{{ __('pages/user/prompt-form.inputs.content.placeholder') }}"
                 outerclasses="!max-w-full"
-                {{-- slet dette igen bagefter --}}
-                autocomplete="family-name"
-                {{-- slet dette igen bagefter --}}
-
             />
     
             {{-- Submit button --}}

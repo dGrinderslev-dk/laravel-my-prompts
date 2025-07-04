@@ -62,8 +62,7 @@ class PromptForm extends Component
             'title' => [
                 'required',
                 'string',
-                //'max:100',
-                'max:10000',
+                'max:100',
                 Rule::unique('prompts')
                     ->ignore($this->prompt)
                     ->where(fn(Builder $query) => $query->where('user_id', auth()->id())),
