@@ -41,15 +41,19 @@ class MarketingUserSeeder extends Seeder
         ]);
 
         $categories = [
+            /*
             'Graphic Design' => [
                 'description' => 'Professional visual design solutions including infographics, business cards, packaging, print ads, and comprehensive brand style guides.',
             ],
+            */
             'Advertising and Campaigns' => [
                 'description' => 'Strategic advertising campaigns across multiple channels with creative development, performance analysis, and optimization strategies.',
             ],
+            /*
             'Email Marketing' => [
                 'description' => 'Complete email marketing solutions from welcome series to newsletters, cart recovery, segmentation, and re-engagement campaigns.',
             ],
+            */
             'Blog Posts' => [
                 'description' => 'Engaging blog content including industry analysis, how-to guides, case studies, thought leadership articles, and product comparisons.',
             ],
@@ -62,9 +66,11 @@ class MarketingUserSeeder extends Seeder
             'SEO Optimization' => [
                 'description' => 'Technical and content SEO strategies including keyword research, on-page optimization, local SEO, and link building campaigns.',
             ],
+            /*
             'Product Descriptions' => [
                 'description' => 'Compelling product copy for e-commerce, luxury goods, technical specifications, benefit-focused descriptions, and product bundles.',
             ],
+            */
         ];
 
         $categoryModels = [];
@@ -78,10 +84,9 @@ class MarketingUserSeeder extends Seeder
             ]);
         }
         
-        // Indlæs data fra fil
-        $categoriesData = require database_path('data/marketing-categories.php');
-
         $promptModels = [];
+        
+        $categoriesData = require database_path('data/marketing-user/categories-with-prompts.php');
 
         foreach ($categoriesData as $categoryData) {
             $category = $categoryModels[$categoryData['category_id']];
@@ -98,9 +103,27 @@ class MarketingUserSeeder extends Seeder
                 $observer = new PromptObserver();
                 $observer->saving($prompt);
                 $prompt->save();
-
                 $promptModels[] = $prompt;
             }
         }
+
+        $uncategorizedPrompts = require database_path('data/marketing-user/uncategorized-prompts.php');
+
+        foreach ($uncategorizedPrompts as $promptData) {
+            $prompt = Prompt::factory()->create(
+                array_merge(
+                    $promptData,
+                    [
+                        'user_id' => $user->id,
+                        'category_id' => null,
+                    ]
+                )
+            );
+            $observer = new PromptObserver();
+            $observer->saving($prompt);
+            $prompt->save();
+            $promptModels[] = $prompt;
+        }
+
     }
 }

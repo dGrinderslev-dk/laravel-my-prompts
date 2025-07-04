@@ -8,6 +8,7 @@
  */
 
 return [
+		/*
 		[
 				'category_id' => 'Graphic Design',
 				'prompts' => [
@@ -38,6 +39,7 @@ return [
 						],
 				],
 		],
+		*/
 		[
 				'category_id' => 'Advertising and Campaigns',
 				'prompts' => [
@@ -73,6 +75,7 @@ return [
 						],
 				],
 		],
+		/*
 		[
 				'category_id' => 'Email Marketing',
 				'prompts' => [
@@ -103,6 +106,7 @@ return [
 						],
 				],
 		],
+		*/
 		[
 				'category_id' => 'Blog Posts',
 				'prompts' => [
@@ -268,6 +272,7 @@ return [
 						],
 				],
 		],
+		/*
 		[
 				'category_id' => 'Product Descriptions',
 				'prompts' => [
@@ -298,4 +303,5 @@ return [
 						],
 				],
 		],
+		*/
 ];
