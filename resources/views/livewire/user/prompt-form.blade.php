@@ -88,6 +88,10 @@
                 required
                 placeholder="{{ __('pages/user/prompt-form.inputs.content.placeholder') }}"
                 outerclasses="!max-w-full"
+                {{-- slet dette igen bagefter --}}
+                autocomplete="given-name"
+                {{-- slet dette igen bagefter --}}
+
             />
     
             {{-- Submit button --}}
