@@ -88,9 +88,11 @@
 												</button>
 												<!-- Video -->
 												<video x-ref="video" class="w-full max-w-2xl rounded-radius aspect-video" controls>
+														{{--
 														<track default kind="captions" srclang="en" src="path to your .vtt file" />
-														<source src="https://penguinui.s3.amazonaws.com/component-assets/peng.webm" type="video/webm">
-														<source src="https://penguinui.s3.amazonaws.com/component-assets/peng.mp4" type="video/mp4">
+														--}}
+														<source src="https://myprompts-video-pull.b-cdn.net/myprompts-demo-video.webm" type="video/webm">
+														<source src="https://myprompts-video-pull.b-cdn.net/myprompts-demo-video.mp4" type="video/mp4">
 														Your browser does not support HTML video.
 												</video>
 										</div>
