@@ -11,6 +11,7 @@ return [
 		'secondaryBtn' => 'Watch 1-min Tour',
 		'bannerImg' => $appName . ' interface',
 		'videoModal_CloseBtn_ariaLabel' => 'close video',
+		'videoModal_videoUnsupported' => 'Your browser does not support HTML video.',
 	],
 	'featureSection' => [
 		'subtitle' => 'Features',

@@ -93,7 +93,7 @@
 														--}}
 														<source src="https://myprompts-video-pull.b-cdn.net/myprompts-demo-video.webm" type="video/webm">
 														<source src="https://myprompts-video-pull.b-cdn.net/myprompts-demo-video.mp4" type="video/mp4">
-														Your browser does not support HTML video.
+														{{ __('pages/public/home.heroSection.videoModal_videoUnsupported') }}
 												</video>
 										</div>
 								</div>
