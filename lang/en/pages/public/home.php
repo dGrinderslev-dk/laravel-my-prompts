@@ -8,7 +8,7 @@ return [
 		'decoTitle' => 'prompts',
 		'text' => 'Store, organize, and access your AI prompts effortlessly. '.$appName.' helps you manage your prompts for ChatGPT, Midjourney, and other AI tools.',
 		'primaryBtn' => 'Start for Free',
-		'secondaryBtn' => 'Watch 2-min Tour',
+		'secondaryBtn' => 'Watch 1-min Tour',
 		'bannerImg' => $appName . ' interface',
 		'videoModal_CloseBtn_ariaLabel' => 'close video',
 	],
