@@ -21,7 +21,7 @@
         @forelse ($this->prompts as $prompt)
             <x-user.prompt-card :prompt="$prompt" :key="'prompt-'.$prompt->id" />
         @empty
-            <p>{{ __('pages/user/prompt-list.no_result') }}</p>
+            <p class="text-sm text-on-surface dark:text-on-surface-dark text-pretty">{{ __('pages/user/prompt-list.no_result') }}</p>
         @endforelse
     </div>
 </div>

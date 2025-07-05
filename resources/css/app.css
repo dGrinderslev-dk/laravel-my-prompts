@@ -23,15 +23,15 @@ body {
     --color-surface: var(--color-white);
     --color-surface-alt: var(--color-neutral-50);
     --color-on-surface: var(--color-neutral-600);
-    --color-on-surface-strong: var(--color-neutral-900);
+    --color-on-surface-strong: var(--color-neutral-900); /* oklch(.205 0 0) = #171717 */
 
     /* <!-- Arctic */
-    --color-primary: var(--color-blue-700);
+    --color-primary: var(--color-blue-700); /* oklch(.488 .243 264.376) = #1447e6 */
     --color-on-primary: var(--color-white);
     /* Arctic --> */
     
     /* <!-- Modern */
-    --color-primary: var(--color-black);
+    --color-primary: var(--color-black); /* #000 */
     --color-on-primary: var(--color-neutral-100);
     /* Modern --> */
 
@@ -44,8 +44,8 @@ body {
     --color-surface-dark: var(--color-neutral-950);
     --color-surface-dark-alt: var(--color-neutral-900);
     --color-on-surface-dark: var(--color-neutral-300);
-    --color-on-surface-dark-strong: var(--color-white);
-    --color-primary-dark: var(--color-white);
+    --color-on-surface-dark-strong: var(--color-white); /* #fff */
+    --color-primary-dark: var(--color-white); /* #fff */
     --color-on-primary-dark: var(--color-black);
     --color-secondary-dark: var(--color-neutral-300);
     --color-on-secondary-dark: var(--color-black);
