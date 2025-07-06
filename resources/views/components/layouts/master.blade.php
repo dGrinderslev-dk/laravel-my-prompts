@@ -112,9 +112,12 @@
         @endif
 
         {{-- Theme color for mobile browsers --}}
+        {{--
         <meta name="theme-color" content="#ff0000">
+        --}}
+        <meta name="theme-color" content="#11ff00" media="(prefers-color-scheme: light)"> {{-- Light theme --}}
+        <meta name="theme-color" content="#0008ff" media="(prefers-color-scheme: dark)"> {{-- Dark theme --}}
         <meta name="msapplication-TileColor" content="#ff0000">
-
 
         {{-- Fonts (bruges ikke da de leveres lokalt) --}}
         {{--
