@@ -19,11 +19,5 @@ class DemoUserSeeder extends Seeder
             'email' => env('USER_DEMO1_EMAIL'),
             'password' => Hash::make(env('USER_DEMO1_PASSWORD')),
         ]);
-
-        $user2 = User::factory()->create([
-            'name' => env('USER_DEMO2_NAME'),
-            'email' => env('USER_DEMO2_EMAIL'),
-            'password' => Hash::make(env('USER_DEMO2_PASSWORD')),
-        ]);
     }
 }
