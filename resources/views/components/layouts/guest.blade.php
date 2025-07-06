@@ -11,6 +11,9 @@
     'titleKey' => 'shared/title.components__layouts__guest',
     'titleParams' => [],
     'darkMode' => NULL,
+    // ___ SEO ___ //
+    'metaDescription' => NULL,
+    'ogDescription' => NULL,
 ])
 
 <x-layouts.master
@@ -21,6 +24,9 @@
     :titleKey="$titleKey"
     :titleParams="$titleParams"
     :darkMode="$darkMode"
+    {{-- ___ SEO ___ --}}
+    :metaDescription="$metaDescription"
+    :ogDescription="$ogDescription"
 >
 
     @php

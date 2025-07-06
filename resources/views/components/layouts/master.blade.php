@@ -2,6 +2,10 @@
     'titleKey' => 'shared/title.components__layouts__master',
     'titleParams' => [],
     'darkMode' => NULL,
+    'viewport' => 'width=device-width, initial-scale=1.0',
+    // ___ SEO ___ //
+    'metaDescription' => __('shared/seo.metaDescription.components__layouts__master'),
+    'ogDescription' => $metaDescription,
 ])
 
 @php
@@ -14,7 +18,7 @@
     }
 
     // ////=== TILFØJELSE START ===////
-    // Detekter hvilken layout der bruges baseret på route
+    // Detect hvilken layout der bruges baseret på route
     $currentRoute = request()->route()->getName();
     $isGuestLayout = str_starts_with($currentRoute, 'public.');
     $isAuthLayout = $currentRoute === 'login' || $currentRoute === 'register';
@@ -66,8 +70,11 @@
         <meta charset="utf-8">
         {{--
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        --}}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+        --}}
+        <meta name="viewport" content="{{ $viewport }}">
+        <meta name="description" content="{{ $metaDescription }}">
+        <meta property="og:description" content="{{ $ogDescription }}">
         <title>{{ __($titleKey, $titleParams) ?? config('app.name', 'Laravel') }}</title>
 
         {{-- Fonts (bruges ikke da de leveres lokalt) --}}

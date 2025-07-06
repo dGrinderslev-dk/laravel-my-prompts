@@ -12,12 +12,18 @@
 	$titleKey = $titleKey ?? 'shared/title.blade_pages__public__home'; // Standard hvis ikke angivet
 	$titleParams = $titleParams ?? []; // Standard hvis ikke angivet
 	$darkMode = $darkMode ?? NULL; // Standard hvis ikke angivet
+	// ___ SEO ___ //
+	$metaDescription = $metaDescription ?? __('shared/seo.metaDescription.blade_pages__public__home');
+	$ogDescription = $ogDescription ?? NULL;
 @endphp
 
 <x-layouts.guest
 	:title-key="$titleKey"
 	:title-params="$titleParams"
 	:dark-mode="$darkMode"
+	{{-- ___ SEO ___ --}}
+	:meta-description="$metaDescription"
+	:og-description="$ogDescription"
 	class=""
 >
 

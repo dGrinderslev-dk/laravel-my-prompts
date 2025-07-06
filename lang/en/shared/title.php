@@ -24,7 +24,7 @@ return [
   // views standard værdier (feks resources/views/eksempel-mappe/eksempelUndermappe/mit-eksempel-view.blade.php har short key "eksempel_mappe__eksempelundermappe__mit_eksempel_view")
   'blade_pages__admin__admin_dashboard' => $appName . $separator . 'Admin Dashboard',
   'blade_pages__admin__users_overview' => $appName . $separator . 'Users Overview',
-  'blade_pages__public__home' => $appName,
+  'blade_pages__public__home' => $appName . $separator . 'Your personal AI prompt library',
   'blade_pages__public__cookies_and_privacy_policy' => $appName . $separator . 'Cookies & Privacy Policy',
   'blade_pages__public__terms_of_use' => $appName . $separator . 'Terms of Use',
   'blade_pages__user__settings__taxonomy' => $appName . $separator . 'Settings Tags/Categories',

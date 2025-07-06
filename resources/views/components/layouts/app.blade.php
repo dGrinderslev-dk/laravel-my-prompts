@@ -7,6 +7,7 @@
     'titleParams' => [],
     'showSearch' => true,
     'darkMode' => NULL,
+    'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover',
 ])
 
 <x-layouts.master
@@ -16,6 +17,7 @@
     :titleKey="$titleKey"
     :titleParams="$titleParams"
     :darkMode="$darkMode"
+    :viewport="$viewport"
 >
 
     {{-- Hovedcontainer for hele layoutet --}}

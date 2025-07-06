@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('blade_pages.public.home', ['darkMode' => true]);
+    return view('blade_pages.public.home', [
+        'darkMode' => true,
+    ]);
 })->name('public.public-pages.home');
 
 Route::get('/cookies-and-privacy-policy', function () {
