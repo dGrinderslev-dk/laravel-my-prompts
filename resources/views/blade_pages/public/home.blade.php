@@ -55,7 +55,7 @@
 <section id="hero-section" class="py-10 md:py-16 scroll-mt-17.5 md:scroll-mt-6.5">
 	<div class="text-center">
 		<div class="max-w-screen-md mx-auto">
-			<div x-data="{ shown: false }" x-intersect.once="shown = true">
+			<div x-data="{ shown: true }" {{-- x-intersect.once="shown = true" --}}>
 				<p
 				x-cloak="bevarplads"
 				:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-700 ease-out' : 'opacity-0 translate-y-[30px] blur-[5px]'"
