@@ -136,7 +136,7 @@
 			<div
 				x-cloak="bevarplads"
 				:class="shown ? 'opacity-100 scale-100 transition duration-2000 ease-back-out' : 'opacity-0 scale-40'"
-				class="delay-400 will-change-transform absolute inset-0 dark:bg-primary/65 blur-[200px] scale-y-75 scale-x-125 rounded-full -z-10">
+				class="delay-0 will-change-transform absolute inset-0 dark:bg-primary/65 blur-[200px] scale-y-75 scale-x-125 rounded-full -z-10">
 			</div>
 		</div>
 	</div>
