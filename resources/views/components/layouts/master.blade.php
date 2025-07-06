@@ -5,7 +5,14 @@
     'viewport' => 'width=device-width, initial-scale=1.0',
     // ___ SEO ___ //
     'metaDescription' => __('shared/seo.metaDescription.components__layouts__master'),
+    'ogTitle' => __($titleKey, $titleParams),
     'ogDescription' => $metaDescription,
+    'ogImage' => asset('images/other/og_image.png'),
+    'ogUrl' => request()->url(),
+    'twitterCard' => 'summary_large_image',
+    'twitterTitle' => $ogTitle,
+    'twitterDescription' => $ogDescription,
+    'twitterImage' => $ogImage,
 ])
 
 @php
@@ -68,14 +75,29 @@
         @endif
 
         <meta charset="utf-8">
-        {{--
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-        --}}
         <meta name="viewport" content="{{ $viewport }}">
-        <meta name="description" content="{{ $metaDescription }}">
-        <meta property="og:description" content="{{ $ogDescription }}">
+
+        {{-- Primary Meta Tags --}}
         <title>{{ __($titleKey, $titleParams) ?? config('app.name', 'Laravel') }}</title>
+        <meta name="description" content="{{ $metaDescription }}">
+
+        {{-- Open Graph / Facebook --}}
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ $ogUrl }}">
+        <meta property="og:title" content="{{ $ogTitle }}">
+        <meta property="og:description" content="{{ $ogDescription }}">
+        <meta property="og:image" content="{{ $ogImage }}">
+        <meta property="og:site_name" content="{{ config('app.name') }}">
+        <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+        {{-- Twitter --}}
+        <meta property="twitter:card" content="{{ $twitterCard }}">
+        <meta property="twitter:url" content="{{ $ogUrl }}">
+        <meta property="twitter:title" content="{{ $twitterTitle }}">
+        <meta property="twitter:description" content="{{ $twitterDescription }}">
+        <meta property="twitter:image" content="{{ $twitterImage }}">
+        {{-- Tilføj twitter:site når du har Twitter handle --}}
+        {{-- <meta name="twitter:site" content="@yourhandle"> --}}
 
         {{-- Fonts (bruges ikke da de leveres lokalt) --}}
         {{--

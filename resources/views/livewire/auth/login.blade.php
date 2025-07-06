@@ -18,6 +18,7 @@ new #[Layout('components.layouts.auth', [
     'authBottomNavLink_href' => 'register',
     'authBottomNavLink_prepend' => 'login',
     'authBottomNavLink_label' => 'shared/navigation_links.register',
+    //'metaDescription' => __('shared/seo.metaDescription.livewire__auth__login'),
 ])] class extends Component {
     #[Validate('required|string|email')]
     public string $email = '';

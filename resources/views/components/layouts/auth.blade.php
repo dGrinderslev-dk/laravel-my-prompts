@@ -12,7 +12,15 @@
     'authBottomNavLink_prepend' => '',
     'authBottomNavLink_label' => '',
     // ___ SEO ___ //
-    'metaDescription' => NULL,
+    'metaDescription' => __('shared/seo.metaDescription.components__layouts__auth'),
+    'ogTitle' => NULL,
+    'ogDescription' => NULL,
+    'ogImage' => NULL,
+    'ogUrl' => NULL,
+    'twitterCard' => NULL,
+    'twitterTitle' => NULL,
+    'twitterDescription' => NULL,
+    'twitterImage' => NULL,
 ])
 
 <x-layouts.master
@@ -24,6 +32,14 @@
     :darkMode="$darkMode"
     {{-- ___ SEO ___ --}}
     :metaDescription="$metaDescription"
+    :ogTitle="$ogTitle"
+    :ogDescription="$ogDescription"
+    :ogImage="$ogImage"
+    :ogUrl="$ogUrl"
+    :twitterCard="$twitterCard"
+    :twitterTitle="$twitterTitle"
+    :twitterDescription="$twitterDescription"
+    :twitterImage="$twitterImage"
 >
 
     <div class="grid md:grid-cols-2 min-h-dvh transition-[height_100ms_ease-out]">

@@ -16,6 +16,7 @@ new #[Layout('components.layouts.auth', [
     'authBottomNavLink_href' => 'login',
     'authBottomNavLink_prepend' => 'register',
     'authBottomNavLink_label' => 'shared/navigation_links.login',
+    //'metaDescription' => __('shared/seo.metaDescription.livewire__auth__register'),
 ])] class extends Component {
     public string $name = '';
     public string $email = '';

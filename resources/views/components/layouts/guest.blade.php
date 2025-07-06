@@ -13,7 +13,14 @@
     'darkMode' => NULL,
     // ___ SEO ___ //
     'metaDescription' => NULL,
+    'ogTitle' => NULL,
     'ogDescription' => NULL,
+    'ogImage' => asset('images/blade_pages/public/home/hero-banner.jpg'),
+    'ogUrl' => NULL,
+    'twitterCard' => NULL,
+    'twitterTitle' => NULL,
+    'twitterDescription' => NULL,
+    'twitterImage' => NULL,
 ])
 
 <x-layouts.master
@@ -26,7 +33,14 @@
     :darkMode="$darkMode"
     {{-- ___ SEO ___ --}}
     :metaDescription="$metaDescription"
+    :ogTitle="$ogTitle"
     :ogDescription="$ogDescription"
+    :ogImage="$ogImage"
+    :ogUrl="$ogUrl"
+    :twitterCard="$twitterCard"
+    :twitterTitle="$twitterTitle"
+    :twitterDescription="$twitterDescription"
+    :twitterImage="$twitterImage"
 >
 
     @php

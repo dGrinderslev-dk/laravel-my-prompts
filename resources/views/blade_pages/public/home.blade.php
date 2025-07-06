@@ -14,17 +14,19 @@
 	$darkMode = $darkMode ?? NULL; // Standard hvis ikke angivet
 	// ___ SEO ___ //
 	$metaDescription = $metaDescription ?? __('shared/seo.metaDescription.blade_pages__public__home');
-	$ogDescription = $ogDescription ?? NULL;
+	$ogTitle = $ogTitle ?? __('shared/seo.ogTitle.blade_pages__public__home');
+	$ogDescription = $ogDescription ?? __('shared/seo.ogDescription.blade_pages__public__home');
 @endphp
 
 <x-layouts.guest
 	:title-key="$titleKey"
 	:title-params="$titleParams"
 	:dark-mode="$darkMode"
+	class=""
 	{{-- ___ SEO ___ --}}
 	:meta-description="$metaDescription"
+	:og-title="$ogTitle"
 	:og-description="$ogDescription"
-	class=""
 >
 
 {{--

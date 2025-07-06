@@ -10,6 +10,14 @@
     'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover',
     // ___ SEO ___ //
     'metaDescription' => NULL,
+    'ogTitle' => NULL,
+    'ogDescription' => NULL,
+    'ogImage' => NULL,
+    'ogUrl' => NULL,
+    'twitterCard' => NULL,
+    'twitterTitle' => NULL,
+    'twitterDescription' => NULL,
+    'twitterImage' => NULL,
 ])
 
 <x-layouts.master
@@ -22,6 +30,14 @@
     :viewport="$viewport"
     {{-- ___ SEO ___ --}}
     :metaDescription="$metaDescription"
+    :ogTitle="$ogTitle"
+    :ogDescription="$ogDescription"
+    :ogImage="$ogImage"
+    :ogUrl="$ogUrl"
+    :twitterCard="$twitterCard"
+    :twitterTitle="$twitterTitle"
+    :twitterDescription="$twitterDescription"
+    :twitterImage="$twitterImage"
 >
 
     {{-- Hovedcontainer for hele layoutet --}}

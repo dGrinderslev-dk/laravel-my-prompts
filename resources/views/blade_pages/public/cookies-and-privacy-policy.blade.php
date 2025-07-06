@@ -2,6 +2,8 @@
 	$titleKey = $titleKey ?? 'shared/title.blade_pages__public__cookies_and_privacy_policy';
 	$titleParams = $titleParams ?? [];
 	$darkMode = $darkMode ?? NULL;
+	// ___ SEO ___ //
+	$metaDescription = $metaDescription ?? __('shared/seo.metaDescription.blade_pages__public__cookies_and_privacy_policy');
 @endphp
 
 <x-layouts.guest
@@ -9,6 +11,8 @@
 	:title-params="$titleParams"
 	:dark-mode="$darkMode"
 	class=""
+	{{-- ___ SEO ___ --}}
+	:meta-description="$metaDescription"
 >
 
 	<div class="py-10 md:py-16">
