@@ -121,11 +121,14 @@
         <meta x-ref="themeColor" name="theme-color" content="{{ $currentThemeColor }}">
         <meta x-ref="msTileColor" name="msapplication-TileColor" content="{{ $currentThemeColor }}">
 
+        {{-- Mobile app config --}}
+        <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-title" content="{{ config('app.name') }}">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-title" content="{{ config('app.name') }}">
 
-
+        {{-- Security headers --}}
+        <meta name="referrer" content="strict-origin-when-cross-origin">
 
         {{-- Fonts (bruges ikke da de leveres lokalt) --}}
         {{--
