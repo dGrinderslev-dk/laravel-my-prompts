@@ -141,4 +141,5 @@ return [
     'terms_of_use_updated' => env('APP_TERMS_UPDATED', '2025-01'), // Format: YYYY-MM
     'terms_of_use_updated_formatted' => \Carbon\Carbon::createFromFormat('Y-m', env('APP_TERMS_UPDATED', '2025-01'))->format('F Y'),
 
+    'google_search_console_verification' => env('GOOGLE_SEARCH_CONSOLE_VERIFICATION', ''), // Google Search Console verification meta tag content
 ];
