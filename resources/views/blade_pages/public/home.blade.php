@@ -13,6 +13,7 @@
 	$titleKey = $titleKey ?? 'shared/title.blade_pages__public__home'; // Standard hvis ikke angivet
 	$titleParams = $titleParams ?? [];
 	$darkMode = $darkMode ?? NULL;
+	$themeColors = $themeColors ?? ['light' => '#85afff', 'dark'  => '#00256b']; // blå
 	$usesBunnyCdn = $usesBunnyCdn ?? true;
 	// ___ SEO ___ //
 	$metaDescription = $metaDescription ?? __('shared/seo.metaDescription.blade_pages__public__home');
@@ -24,6 +25,7 @@
 	:title-key="$titleKey"
 	:title-params="$titleParams"
 	:dark-mode="$darkMode"
+	:theme-colors="$themeColors"
 	:uses-bunny-cdn="$usesBunnyCdn"
 	class=""
 	{{-- ___ SEO ___ --}}

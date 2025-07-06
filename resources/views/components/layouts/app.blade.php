@@ -7,6 +7,7 @@
     'titleParams' => [],
     'showSearch' => true,
     'darkMode' => NULL,
+    'themeColors' => config('app.theme_colors.app'),
     'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover',
     // ___ SEO ___ //
     'metaDescription' => NULL,
@@ -28,6 +29,7 @@
     :titleKey="$titleKey"
     :titleParams="$titleParams"
     :darkMode="$darkMode"
+    :themeColors="$themeColors"
     :viewport="$viewport"
     {{-- ___ SEO ___ --}}
     :metaDescription="$metaDescription"

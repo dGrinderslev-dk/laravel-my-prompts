@@ -144,6 +144,7 @@ return [
     'google_search_console_verification' => env('GOOGLE_SEARCH_CONSOLE_VERIFICATION', ''), // Google Search Console verification meta tag content
 
     'theme_colors' => [
+        /*
         'guest'  => [
             'light' => '#fff', // surface
             'dark'  => '#0a0a0a', // surface-dark
@@ -156,16 +157,29 @@ return [
             'light' => '#fafafa', // surface-alt
             'dark'  => '#171717', // surface-dark-alt
         ],
-        /*
         'default'  => [
             'light' => '#fff', // surface
             'dark'  => '#0a0a0a', // surface-dark
         ],
         */
-        'default'  => [
-            'light' => '#80fbff',
-            'dark'  => '#52254f',
+        
+        'guest'  => [
+            'light' => '#ff8f8f',
+            'dark'  => '#690505',
         ],
+        'auth'  => [
+            'light' => '#ffff85',
+            'dark'  => '#6e6e03',
+        ],
+        'app'  => [
+            'light' => '#a6ff94',
+            'dark'  => '#0e4d02',
+        ],
+        'default'  => [
+            'light' => '#f29cff',
+            'dark'  => '#470052',
+        ],
+        
 
     ],
 ];

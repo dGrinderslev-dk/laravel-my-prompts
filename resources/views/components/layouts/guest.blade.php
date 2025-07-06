@@ -11,6 +11,7 @@
     'titleKey' => 'shared/title.components__layouts__guest',
     'titleParams' => [],
     'darkMode' => NULL,
+    'themeColors' => config('app.theme_colors.guest'),
     'usesBunnyCdn' => NULL,
     // ___ SEO ___ //
     'metaDescription' => NULL,
@@ -33,6 +34,7 @@
     :titleKey="$titleKey"
     :titleParams="$titleParams"
     :darkMode="$darkMode"
+    :themeColors="$themeColors"
     :usesBunnyCdn="$usesBunnyCdn"
     {{-- ___ SEO ___ --}}
     :metaDescription="$metaDescription"

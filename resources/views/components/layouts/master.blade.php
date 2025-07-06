@@ -2,7 +2,7 @@
     'titleKey' => 'shared/title.components__layouts__master',
     'titleParams' => [],
     'darkMode' => NULL,
-    'themeColors' => config('app.theme_colors.default'),
+    'themeColors' => config('app.theme_colors.default'), // lilla
     'viewport' => 'width=device-width, initial-scale=1.0',
     'usesBunnyCdn' => false,
     // ___ SEO ___ //
@@ -21,18 +21,12 @@
 
 @php
     $color_mode = auth()->user()?->settings?->color_mode;
-    
     if (isset($darkMode)) {
         $quickColorMode = $darkMode ? 'dark' : '';
     } else {
         $quickColorMode = $color_mode === 'dark' ? 'dark' : '';
     }
-
-
-    
-    $currentColor = $themeColors[$quickColorMode === 'dark' ? 'dark' : 'light'];
-
-
+    $currentThemeColor = $themeColors[$quickColorMode === 'dark' ? 'dark' : 'light'];
 
     // ////=== TILFØJELSE START ===////
     // Detect hvilken layout der bruges baseret på route
@@ -46,21 +40,17 @@
 <html
     class="{{ $quickColorMode }}"
     x-data="{
-        themeColors: @json(config('app.theme_colors')),
+        themeColors: @json($themeColors),
         color_mode: '{{ $color_mode }}',
         prefersDark: window.matchMedia('(prefers-color-scheme: dark)').matches,
         forcedDarkMode: @json($darkMode),
         applyColorMode() {
             const shouldUseDark = this.color_mode === 'dark' || ((this.color_mode === 'system' || this.color_mode === '') && this.prefersDark);
-            document.documentElement.classList.toggle('dark', this.forcedDarkMode ?? shouldUseDark);
-            this.updateThemeMeta();
-        }
-        updateThemeMeta() {
-            const shouldUseDark = this.color_mode === 'dark' || ((this.color_mode === 'system' || this.color_mode === '') && this.prefersDark);
-            const newColorIsDark = this.forcedDarkMode ?? shouldUseDark;
-            const newColor = newColorIsDark ? this.themeColors.dark : this.themeColors.light;
-            this.$refs.themeColor.setAttribute('content', newColor);
-            this.$refs.msTileColor.setAttribute('content', newColor);
+            const finalColorIsDark = this.forcedDarkMode ?? shouldUseDark;
+            document.documentElement.classList.toggle('dark', finalColorIsDark);
+            const finalThemeColor = finalColorIsDark ? this.themeColors.dark : this.themeColors.light;
+            this.$refs.themeColor.setAttribute('content', finalThemeColor);
+            this.$refs.msTileColor.setAttribute('content', finalThemeColor);
         }
     }"
     x-init="
@@ -128,15 +118,8 @@
         @endif
 
         {{-- Theme color for mobile browsers --}}
-        {{--
-        <meta name="theme-color" content="#ff0000">
-        <meta name="theme-color" content="#11ff00" media="(prefers-color-scheme: light)">
-        <meta name="theme-color" content="#0008ff" media="(prefers-color-scheme: dark)">
-        <meta name="msapplication-TileColor" content="#ff0000">
-        --}}
-
-        <meta x-ref="themeColor" name="theme-color" content="{{ $currentColor }}">
-        <meta x-ref="msTileColor" name="msapplication-TileColor" content="{{ $currentColor }}">
+        <meta x-ref="themeColor" name="theme-color" content="{{ $currentThemeColor }}">
+        <meta x-ref="msTileColor" name="msapplication-TileColor" content="{{ $currentThemeColor }}">
 
         {{-- Fonts (bruges ikke da de leveres lokalt) --}}
         {{--
