@@ -6,7 +6,7 @@
     'titleKey' => 'shared/title.components__layouts__auth',
     'titleParams' => [],
     'darkMode' => true,
-    //'themeColors' => config('app.theme_colors.auth'),
+    'themeColors' => config('app.theme_colors.auth'),
     'authHeaderTitle' => 'default',
     'authHeaderDescription' => 'default',
     'authBottomNavLink_href' => '',
@@ -32,9 +32,7 @@
     :titleKey="$titleKey"
     :titleParams="$titleParams"
     :darkMode="$darkMode"
-    {{--
     :themeColors="$themeColors"
-    --}}
     {{-- ___ SEO ___ --}}
     :metaDescription="$metaDescription"
     :ogTitle="$ogTitle"
