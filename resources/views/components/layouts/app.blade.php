@@ -8,6 +8,8 @@
     'showSearch' => true,
     'darkMode' => NULL,
     'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover',
+    // ___ SEO ___ //
+    'metaDescription' => NULL,
 ])
 
 <x-layouts.master
@@ -18,6 +20,8 @@
     :titleParams="$titleParams"
     :darkMode="$darkMode"
     :viewport="$viewport"
+    {{-- ___ SEO ___ --}}
+    :metaDescription="$metaDescription"
 >
 
     {{-- Hovedcontainer for hele layoutet --}}

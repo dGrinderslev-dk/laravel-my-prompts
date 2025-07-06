@@ -11,6 +11,8 @@
     'authBottomNavLink_href' => '',
     'authBottomNavLink_prepend' => '',
     'authBottomNavLink_label' => '',
+    // ___ SEO ___ //
+    'metaDescription' => NULL,
 ])
 
 <x-layouts.master
@@ -20,6 +22,8 @@
     :titleKey="$titleKey"
     :titleParams="$titleParams"
     :darkMode="$darkMode"
+    {{-- ___ SEO ___ --}}
+    :metaDescription="$metaDescription"
 >
 
     <div class="grid md:grid-cols-2 min-h-dvh transition-[height_100ms_ease-out]">
