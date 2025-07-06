@@ -121,6 +121,11 @@
         <meta x-ref="themeColor" name="theme-color" content="{{ $currentThemeColor }}">
         <meta x-ref="msTileColor" name="msapplication-TileColor" content="{{ $currentThemeColor }}">
 
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+
+
         {{-- Fonts (bruges ikke da de leveres lokalt) --}}
         {{--
         <link rel="preconnect" href="https://fonts.googleapis.com">
