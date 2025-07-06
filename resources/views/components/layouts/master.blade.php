@@ -13,6 +13,8 @@
     'twitterTitle' => $ogTitle,
     'twitterDescription' => $ogDescription,
     'twitterImage' => $ogImage,
+    'robotsAllowed' => true,
+    'canonicalUrl' => url()->current(),
 ])
 
 @php
@@ -74,8 +76,19 @@
             </script>
         @endif
 
+
+
+        <script>
+            console.log('{{ env('APP_URL') }}');
+        </script>
+
+
+
         <meta charset="utf-8">
         <meta name="viewport" content="{{ $viewport }}">
+
+        <meta name="robots" content="{{ $robotsAllowed ? 'index, follow' : 'noindex, nofollow' }}">
+        <link rel="canonical" href="{{ $canonicalUrl }}">
 
         {{-- Primary Meta Tags --}}
         <title>{{ __($titleKey, $titleParams) ?? config('app.name', 'Laravel') }}</title>

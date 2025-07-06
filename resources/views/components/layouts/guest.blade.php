@@ -15,12 +15,13 @@
     'metaDescription' => NULL,
     'ogTitle' => NULL,
     'ogDescription' => NULL,
-    'ogImage' => asset('images/blade_pages/public/home/hero-banner.jpg'),
+    'ogImage' => /* asset('images/blade_pages/public/home/hero-banner.jpg') */ NULL,
     'ogUrl' => NULL,
     'twitterCard' => NULL,
     'twitterTitle' => NULL,
     'twitterDescription' => NULL,
     'twitterImage' => NULL,
+    'robotsAllowed' => true,
 ])
 
 <x-layouts.master
@@ -41,6 +42,7 @@
     :twitterTitle="$twitterTitle"
     :twitterDescription="$twitterDescription"
     :twitterImage="$twitterImage"
+    :robotsAllowed="$robotsAllowed"
 >
 
     @php

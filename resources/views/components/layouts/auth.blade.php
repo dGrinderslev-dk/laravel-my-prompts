@@ -21,6 +21,7 @@
     'twitterTitle' => NULL,
     'twitterDescription' => NULL,
     'twitterImage' => NULL,
+    'robotsAllowed' => false,
 ])
 
 <x-layouts.master
@@ -40,6 +41,7 @@
     :twitterTitle="$twitterTitle"
     :twitterDescription="$twitterDescription"
     :twitterImage="$twitterImage"
+    :robotsAllowed="$robotsAllowed"
 >
 
     <div class="grid md:grid-cols-2 min-h-dvh transition-[height_100ms_ease-out]">

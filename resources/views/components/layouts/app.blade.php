@@ -18,6 +18,7 @@
     'twitterTitle' => NULL,
     'twitterDescription' => NULL,
     'twitterImage' => NULL,
+    'robotsAllowed' => false,
 ])
 
 <x-layouts.master
@@ -38,6 +39,7 @@
     :twitterTitle="$twitterTitle"
     :twitterDescription="$twitterDescription"
     :twitterImage="$twitterImage"
+    :robotsAllowed="$robotsAllowed"
 >
 
     {{-- Hovedcontainer for hele layoutet --}}
