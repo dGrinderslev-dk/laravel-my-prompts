@@ -11,6 +11,7 @@
     'titleKey' => 'shared/title.components__layouts__guest',
     'titleParams' => [],
     'darkMode' => NULL,
+    'usesBunnyCdn' => NULL,
     // ___ SEO ___ //
     'metaDescription' => NULL,
     'ogTitle' => NULL,
@@ -32,6 +33,7 @@
     :titleKey="$titleKey"
     :titleParams="$titleParams"
     :darkMode="$darkMode"
+    :usesBunnyCdn="$usesBunnyCdn"
     {{-- ___ SEO ___ --}}
     :metaDescription="$metaDescription"
     :ogTitle="$ogTitle"

@@ -3,6 +3,7 @@
     'titleParams' => [],
     'darkMode' => NULL,
     'viewport' => 'width=device-width, initial-scale=1.0',
+    'usesBunnyCdn' => false,
     // ___ SEO ___ //
     'metaDescription' => __('shared/seo.metaDescription.components__layouts__master'),
     'ogTitle' => __($titleKey, $titleParams),
@@ -103,6 +104,17 @@
         <meta property="twitter:image" content="{{ $twitterImage }}">
         {{-- Tilføj twitter:site når du har Twitter handle --}}
         {{-- <meta name="twitter:site" content="@yourhandle"> --}}
+
+        {{-- DNS Prefetch for performance --}}
+        @if ($usesBunnyCdn)
+            <link rel="dns-prefetch" href="//myprompts-video-pull.b-cdn.net">
+            <link rel="preconnect" href="https://myprompts-video-pull.b-cdn.net" crossorigin>
+        @endif
+
+        {{-- Theme color for mobile browsers --}}
+        <meta name="theme-color" content="#ff0000">
+        <meta name="msapplication-TileColor" content="#ff0000">
+
 
         {{-- Fonts (bruges ikke da de leveres lokalt) --}}
         {{--

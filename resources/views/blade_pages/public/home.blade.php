@@ -1,5 +1,6 @@
 @prepend('head')
 	{{-- @vite('resources/css/pages/public/home.css') --}}
+	<meta name="google-site-verification" content="{{ config('app.google_search_console_verification') }}">
 @endprepend
 
 @prepend('styles')
@@ -10,8 +11,9 @@
 
 @php
 	$titleKey = $titleKey ?? 'shared/title.blade_pages__public__home'; // Standard hvis ikke angivet
-	$titleParams = $titleParams ?? []; // Standard hvis ikke angivet
-	$darkMode = $darkMode ?? NULL; // Standard hvis ikke angivet
+	$titleParams = $titleParams ?? [];
+	$darkMode = $darkMode ?? NULL;
+	$usesBunnyCdn = $usesBunnyCdn ?? true;
 	// ___ SEO ___ //
 	$metaDescription = $metaDescription ?? __('shared/seo.metaDescription.blade_pages__public__home');
 	$ogTitle = $ogTitle ?? __('shared/seo.ogTitle.blade_pages__public__home');
@@ -22,6 +24,7 @@
 	:title-key="$titleKey"
 	:title-params="$titleParams"
 	:dark-mode="$darkMode"
+	:uses-bunny-cdn="$usesBunnyCdn"
 	class=""
 	{{-- ___ SEO ___ --}}
 	:meta-description="$metaDescription"
