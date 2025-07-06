@@ -117,12 +117,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="relative mt-12 max-w-screen-xl mx-auto isolate rounded-xl md:mt-16" x-data="{ shown: false }" x-intersect.once="shown = true">
+		<div class="relative mt-12 max-w-screen-xl mx-auto isolate rounded-xl md:mt-16" x-data="{ shown: true }" {{-- x-intersect.once="shown = true" --}}>
 			<figure
-			x-cloak="bevarplads"
-			:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-1500 ease-back-in-out' : 'opacity-0 translate-y-[120px] blur-[5px]'"
-			class="delay-500 will-change-transform dark:bg-surface-dark border dark:border-surface-dark-alt backdrop-blur-3xl rounded-xl shadow-2xl overflow-hidden hero-scale-animation"
-			style="view-timeline-name: --figure-reveal; view-timeline-axis: block; animation: scale-on-scroll linear; animation-timeline: --figure-reveal; animation-range: entry 50% cover 100%;"
+				{{--
+				x-cloak="bevarplads"
+				--}}
+				:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-1500 ease-back-in-out' : 'opacity-0 translate-y-[120px] blur-[5px]'"
+				class="delay-500 will-change-transform dark:bg-surface-dark border dark:border-surface-dark-alt backdrop-blur-3xl rounded-xl shadow-2xl overflow-hidden hero-scale-animation"
+				style="view-timeline-name: --figure-reveal; view-timeline-axis: block; animation: scale-on-scroll linear; animation-timeline: --figure-reveal; animation-range: entry 50% cover 100%;"
 			>
 				<img src="{{ asset('images/blade_pages/public/home/hero-banner.jpg') }}" width="1468" height="815" alt="{{ __('pages/public/home.heroSection.bannerImg') }}">
 			</figure>
