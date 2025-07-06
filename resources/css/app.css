@@ -21,7 +21,7 @@ body {
 @theme {
     /* Light Theme */
     --color-surface: var(--color-white);
-    --color-surface-alt: var(--color-neutral-50);
+    --color-surface-alt: var(--color-neutral-50); /* oklch(0.985 0 0) = #fafafa */
     --color-on-surface: var(--color-neutral-600);
     --color-on-surface-strong: var(--color-neutral-900); /* oklch(.205 0 0) = #171717 */
 
@@ -41,8 +41,8 @@ body {
     --color-outline-strong: var(--color-neutral-800);
 
     /* Dark Theme */
-    --color-surface-dark: var(--color-neutral-950);
-    --color-surface-dark-alt: var(--color-neutral-900);
+    --color-surface-dark: var(--color-neutral-950); /* oklch(0.145 0 0) = #0a0a0a */
+    --color-surface-dark-alt: var(--color-neutral-900); /* oklch(.205 0 0) = #171717 */
     --color-on-surface-dark: var(--color-neutral-300);
     --color-on-surface-dark-strong: var(--color-white); /* #fff */
     --color-primary-dark: var(--color-white); /* #fff */

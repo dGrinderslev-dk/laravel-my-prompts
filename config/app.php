@@ -144,7 +144,28 @@ return [
     'google_search_console_verification' => env('GOOGLE_SEARCH_CONSOLE_VERIFICATION', ''), // Google Search Console verification meta tag content
 
     'theme_colors' => [
-        'light' => '#fff700',
-        'dark'  => '#9500ff',
+        'guest'  => [
+            'light' => '#fff', // surface
+            'dark'  => '#0a0a0a', // surface-dark
+        ],
+        'auth'  => [
+            'light' => '#fff', // surface
+            'dark'  => '#0a0a0a', // surface-dark
+        ],
+        'app'  => [
+            'light' => '#fafafa', // surface-alt
+            'dark'  => '#171717', // surface-dark-alt
+        ],
+        /*
+        'default'  => [
+            'light' => '#fff', // surface
+            'dark'  => '#0a0a0a', // surface-dark
+        ],
+        */
+        'default'  => [
+            'light' => '#80fbff',
+            'dark'  => '#52254f',
+        ],
+
     ],
 ];

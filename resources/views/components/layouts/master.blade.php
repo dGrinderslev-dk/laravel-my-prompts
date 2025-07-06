@@ -2,6 +2,7 @@
     'titleKey' => 'shared/title.components__layouts__master',
     'titleParams' => [],
     'darkMode' => NULL,
+    'themeColors' => config('app.theme_colors.default'),
     'viewport' => 'width=device-width, initial-scale=1.0',
     'usesBunnyCdn' => false,
     // ___ SEO ___ //
@@ -28,9 +29,8 @@
     }
 
 
-
-    $currentColor = config('app.theme_colors.' . ($quickColorMode === 'dark' ? 'dark' : 'light'));
-
+    
+    $currentColor = $themeColors[$quickColorMode === 'dark' ? 'dark' : 'light'];
 
 
 
