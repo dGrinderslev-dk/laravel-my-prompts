@@ -27,6 +27,13 @@
         $quickColorMode = $color_mode === 'dark' ? 'dark' : '';
     }
 
+
+
+    $currentColor = config('app.theme_colors.' . ($quickColorMode === 'dark' ? 'dark' : 'light'));
+
+
+
+
     // ////=== TILFØJELSE START ===////
     // Detect hvilken layout der bruges baseret på route
     $currentRoute = request()->route()->getName();
@@ -39,12 +46,21 @@
 <html
     class="{{ $quickColorMode }}"
     x-data="{
+        themeColors: @json(config('app.theme_colors')),
         color_mode: '{{ $color_mode }}',
         prefersDark: window.matchMedia('(prefers-color-scheme: dark)').matches,
         forcedDarkMode: @json($darkMode),
         applyColorMode() {
             const shouldUseDark = this.color_mode === 'dark' || ((this.color_mode === 'system' || this.color_mode === '') && this.prefersDark);
             document.documentElement.classList.toggle('dark', this.forcedDarkMode ?? shouldUseDark);
+            this.updateThemeMeta();
+        }
+        updateThemeMeta() {
+            const shouldUseDark = this.color_mode === 'dark' || ((this.color_mode === 'system' || this.color_mode === '') && this.prefersDark);
+            const newColorIsDark = this.forcedDarkMode ?? shouldUseDark;
+            const newColor = newColorIsDark ? this.themeColors.dark : this.themeColors.light;
+            this.$refs.themeColor.setAttribute('content', newColor);
+            this.$refs.msTileColor.setAttribute('content', newColor);
         }
     }"
     x-init="
@@ -114,10 +130,13 @@
         {{-- Theme color for mobile browsers --}}
         {{--
         <meta name="theme-color" content="#ff0000">
-        --}}
-        <meta name="theme-color" content="#11ff00" media="(prefers-color-scheme: light)"> {{-- Light theme --}}
-        <meta name="theme-color" content="#0008ff" media="(prefers-color-scheme: dark)"> {{-- Dark theme --}}
+        <meta name="theme-color" content="#11ff00" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#0008ff" media="(prefers-color-scheme: dark)">
         <meta name="msapplication-TileColor" content="#ff0000">
+        --}}
+
+        <meta x-ref="themeColor" name="theme-color" content="{{ $currentColor }}">
+        <meta x-ref="msTileColor" name="msapplication-TileColor" content="{{ $currentColor }}">
 
         {{-- Fonts (bruges ikke da de leveres lokalt) --}}
         {{--
