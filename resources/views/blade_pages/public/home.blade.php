@@ -62,7 +62,7 @@
 				class="delay-0 will-change-transform text-sm uppercase tracking-wider dark:bg-surface-dark-alt dark:text-on-surface-dark max-w-max mx-auto px-3 py-1 rounded-full border-t dark:border-primary/20 backdrop-blur-3xl mb-6 md:mb-10">
 					{{ __('pages/public/home.heroSection.subtitle') }}
 				</p>
-				<h2
+				<h1
 				x-cloak="bevarplads"
 				:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-700 ease-out' : 'opacity-0 translate-y-[30px] blur-[5px]'"
 				class="delay-400 will-change-transform text-on-surface-strong dark:text-on-surface-dark-strong text-4xl font-semibold !leading-tight mb-4 md:text-5xl md:mb-5 lg:text-6xl text-balance">
@@ -71,7 +71,7 @@
 						{{ __('pages/public/home.heroSection.decoTitle') }}
 						<span class="absolute -z-10 top-2 -left-6 -right-4 bottom-0.5 dark:bg-surface-dark-alt/80 rounded-full px-8 ms-3 border-t dark:border-outline-dark-strong/25 shadow-[inset_0px_0px_30px_0px] dark:shadow-outline-dark md:top-3 md:bottom-1 lg:top-4 lg:bottom-2"></span>
 					</span>
-				</h2>
+				</h1>
 				<p
 				x-cloak="bevarplads"
 				:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-700 ease-out' : 'opacity-0 translate-y-[30px] blur-[5px]'"
