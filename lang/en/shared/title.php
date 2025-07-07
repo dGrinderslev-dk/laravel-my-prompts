@@ -1,5 +1,5 @@
 <?php
-$separator = ' | ';
+$separator = config('app.separator');
 $appName = config('app.name');
 
 /*

@@ -133,6 +133,8 @@ return [
     |
     */
 
+    'separator' => ' | ',
+
     'legal_email' => env('MAIL_LEGAL_EMAIL', 'legal@example.com'), // Denne email-adresse vil blive brugt til juridiske henvendelser inklusive privatlivspolitik, brugsvilkår og andre juridiske spørgsmål.
     
     'privacy_policy_updated' => env('APP_PRIVACY_POLICY_UPDATED', '2025-01'), // Format: YYYY-MM
