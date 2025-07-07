@@ -15,11 +15,11 @@ return [
 
     'metaDescription' => [
 				// layout template standard værdier (feks resources/views/components/layouts/guest.blade.php har short key "components__layouts__guest")
-        'components__layouts__master' => 'Store, organize, and access your AI prompts effortlessly. ' . $appName . ' helps you manage prompts for ChatGPT, Midjourney, and other AI tools.',
+        'components__layouts__master' => $appName,
         'components__layouts__auth' => 'Join ' . $appName . ' to organize your AI prompts. Sign up or log in to start managing your ChatGPT, Midjourney, and other AI tool prompts.',
-        
+
 				// views standard værdier (feks resources/views/eksempel-mappe/eksempelUndermappe/mit-eksempel-view.blade.php har short key "eksempel_mappe__eksempelundermappe__mit_eksempel_view")
-        'blade_pages__public__home' => 'The easiest way to organize your AI prompts. Store, categorize, and access prompts for ChatGPT, Midjourney, DALL-E, and other AI tools. Start for free today.',
+        'blade_pages__public__home' => 'Store, categorize, and instantly access your prompts for ChatGPT, Midjourney, and other AI tools. Start for free today and try the simplest way to organize your AI prompts.',
         'blade_pages__public__cookies_and_privacy_policy' => 'Learn how ' . $appName . ' protects your privacy and handles your data. Complete information about cookies, data processing, and your rights under GDPR.',
         'blade_pages__public__terms_of_use' => 'Terms of Use for ' . $appName . '. Read about acceptable use, account responsibilities, and service availability for our AI prompt management platform.',
         //'livewire__auth__login' => 'Log in to ' . $appName . ' to access your AI prompt library. Organize and manage your ChatGPT, Midjourney, and other AI tool prompts.',
@@ -27,6 +27,9 @@ return [
     ],
 
     'ogTitle' => [
+				// layout template standard værdier (feks resources/views/components/layouts/guest.blade.php har short key "components__layouts__guest")
+        'components__layouts__auth' => $appName . $separator . "Sign Up/Log In. It's free.",
+
 				// views standard værdier (kun hvis det skal være anderledes end page title)
 				// (feks resources/views/eksempel-mappe/eksempelUndermappe/mit-eksempel-view.blade.php har short key "eksempel_mappe__eksempelundermappe__mit_eksempel_view")
         'blade_pages__public__home' => $appName . $separator . 'Organize Your AI Prompts Effortlessly',
@@ -35,7 +38,7 @@ return [
     'ogDescription' => [
 				// views standard værdier (kun hvis det skal være anderledes end metaDescription)
 				// (feks resources/views/eksempel-mappe/eksempelUndermappe/mit-eksempel-view.blade.php har short key "eksempel_mappe__eksempelundermappe__mit_eksempel_view")
-        'blade_pages__public__home' => 'Store, organize, and access your AI prompts with ease. Perfect for ChatGPT, Midjourney, DALL-E, and other AI tools. Free to start.',
+        'blade_pages__public__home' => 'Free AI prompt manager for ChatGPT, Midjourney, and other AI tools. Store, categorize, and instantly access your prompts with ' . $appName . '.',
     ],
 
     'twitterTitle' => [
