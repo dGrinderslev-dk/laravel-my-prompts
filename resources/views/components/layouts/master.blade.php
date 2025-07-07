@@ -40,7 +40,7 @@
 <html
     class="{{ $quickColorMode }}"
     x-data="{
-        themeColors: @json($themeColors),
+        themeColors: {{ Js::from($themeColors) }},
         color_mode: '{{ $color_mode }}',
         prefersDark: window.matchMedia('(prefers-color-scheme: dark)').matches,
         forcedDarkMode: @json($darkMode),
@@ -59,6 +59,15 @@
             prefersDark = e.matches;
             applyColorMode();
         });
+        console.log('this.themeColors:');
+        console.log(this.themeColors);
+        console.log('this.themeColors.light:');
+        console.log(this.themeColors.light);
+        console.log('loooooooooooool');
+        console.log('themeColors:');
+        console.log(themeColors);
+        console.log('themeColors.light:');
+        console.log(themeColors.light);
         {{--
         document.addEventListener('livewire:navigated', () => {
             applyColorMode();
