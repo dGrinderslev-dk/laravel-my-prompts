@@ -18,7 +18,7 @@ return [
   'components__layouts__app__admin' => $appName . $separator . 'Admin',
   'components__layouts__auth' => $appName . $separator . 'Signup/Login',
   'components__layouts__guest' => $appName,
-  'components__layouts__master' => $appName,
+  'components__layouts__master' => $appName . $separator . 'Your personal AI prompt library',
   'components__layouts__publicprofile' => $appName . $separator . 'Public Profile',
 
   // views standard værdier (feks resources/views/eksempel-mappe/eksempelUndermappe/mit-eksempel-view.blade.php har short key "eksempel_mappe__eksempelundermappe__mit_eksempel_view")

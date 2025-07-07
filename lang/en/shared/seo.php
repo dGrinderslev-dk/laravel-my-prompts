@@ -15,7 +15,7 @@ return [
 
     'metaDescription' => [
 				// layout template standard værdier (feks resources/views/components/layouts/guest.blade.php har short key "components__layouts__guest")
-        'components__layouts__master' => $appName,
+        'components__layouts__master' => $appName . $separator . 'the simplest way to organize your AI prompts.',
         'components__layouts__auth' => 'Join ' . $appName . ' to organize your AI prompts. Sign up or log in to start managing your ChatGPT, Midjourney, and other AI tool prompts.',
 
 				// views standard værdier (feks resources/views/eksempel-mappe/eksempelUndermappe/mit-eksempel-view.blade.php har short key "eksempel_mappe__eksempelundermappe__mit_eksempel_view")
@@ -27,9 +27,6 @@ return [
     ],
 
     'ogTitle' => [
-				// layout template standard værdier (feks resources/views/components/layouts/guest.blade.php har short key "components__layouts__guest")
-        'components__layouts__auth' => $appName . $separator . "Sign Up/Log In. It's free.",
-
 				// views standard værdier (kun hvis det skal være anderledes end page title)
 				// (feks resources/views/eksempel-mappe/eksempelUndermappe/mit-eksempel-view.blade.php har short key "eksempel_mappe__eksempelundermappe__mit_eksempel_view")
         'blade_pages__public__home' => $appName . $separator . 'Organize Your AI Prompts Effortlessly',
