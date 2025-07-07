@@ -126,7 +126,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-        {{-- Favicon and Touch Icons --}}
+        {{-- Added favicons using realfavicongenerator.net --}}
         <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-96x96.png') }}" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicons/favicon.svg') }}" />
         <link rel="shortcut icon" href="{{ asset('images/favicons/favicon.ico') }}" />
