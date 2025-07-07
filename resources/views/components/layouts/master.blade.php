@@ -48,12 +48,6 @@
             const shouldUseDark = this.color_mode === 'dark' || ((this.color_mode === 'system' || this.color_mode === '') && this.prefersDark);
             const finalColorIsDark = this.forcedDarkMode ?? shouldUseDark;
             document.documentElement.classList.toggle('dark', finalColorIsDark);
-            console.log('loooooooooooool');
-            console.log('this.themeColors.light:');
-            console.log(this.themeColors.light);
-            console.log('themeColors.light:');
-            console.log(themeColors.light);
-            console.log('loooooooooooool');
             const finalThemeColor = finalColorIsDark ? this.themeColors.dark : this.themeColors.light;
             this.$refs.themeColor.setAttribute('content', finalThemeColor);
             this.$refs.msTileColor.setAttribute('content', finalThemeColor);
