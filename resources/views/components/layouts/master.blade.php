@@ -9,7 +9,7 @@
     'metaDescription' => __('shared/seo.metaDescription.components__layouts__master'),
     'ogTitle' => __($titleKey, $titleParams),
     'ogDescription' => $metaDescription,
-    'ogImage' => asset('images/other/og_image.png'),
+    'ogImage' => asset('images/other/og_image.jpeg'),
     'ogUrl' => request()->url(),
     'twitterCard' => 'summary_large_image',
     'twitterTitle' => $ogTitle,
