@@ -120,7 +120,7 @@
 		<div class="relative mt-12 max-w-screen-xl mx-auto isolate rounded-xl md:mt-16" x-data="{ shown: false }" x-intersect.once="shown = true">
 			<figure
 			x-cloak="bevarplads"
-			:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-1500 ease-back-in-out' : 'opacity-0 translate-y-[120px] blur-[5px]'"
+			:class="shown ? 'opacity-100 translate-y-[0px] blur-[0px] transition duration-100 ease-back-in-out' : 'opacity-0 translate-y-[120px] blur-[5px]'"
 			class="delay-0 will-change-transform dark:bg-surface-dark border dark:border-surface-dark-alt backdrop-blur-3xl rounded-xl shadow-2xl overflow-hidden hero-scale-animation"
 			style="view-timeline-name: --figure-reveal; view-timeline-axis: block; animation: scale-on-scroll linear; animation-timeline: --figure-reveal; animation-range: entry 50% cover 100%;"
 			>
@@ -130,12 +130,12 @@
 			{{-- Blurry glow effect --}}
 			<div
 				x-cloak="bevarplads"
-				:class="shown ? 'opacity-100 scale-100 transition duration-2000 ease-back-in-out' : 'opacity-0 scale-80'"
+				:class="shown ? 'opacity-100 scale-100 transition duration-400 ease-back-in-out' : 'opacity-0 scale-80'"
 				class="delay-0 will-change-transform absolute dark:bg-primary inset-5 blur-[50px] -z-10">
 			</div>
 			<div
 				x-cloak="bevarplads"
-				:class="shown ? 'opacity-100 scale-100 transition duration-2000 ease-back-out' : 'opacity-0 scale-40'"
+				:class="shown ? 'opacity-100 scale-100 transition duration-400 ease-back-out' : 'opacity-0 scale-40'"
 				class="delay-0 will-change-transform absolute inset-0 dark:bg-primary/65 blur-[200px] scale-y-75 scale-x-125 rounded-full -z-10">
 			</div>
 		</div>
