@@ -5,8 +5,4 @@ return [
 	'srOnly' => [
 		'active' => 'active',
 	],
-	// ___alt-text for images___
-	'altText' => [
-		'avatar' => 'avatar',
-	],
 ];

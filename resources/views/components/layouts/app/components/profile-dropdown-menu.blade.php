@@ -5,7 +5,7 @@
 <div x-data="{ userDropdownIsOpen: false }" class="{{ $sideOrTopNavbar === 'top' ? 'relative' : 'mt-auto' }}" x-on:keydown.esc.window="userDropdownIsOpen = false">
     {{-- dropdown-menu knappen --}}
     <button type="button" class="flex w-full items-center rounded-radius gap-2 p-2 text-left text-on-surface hover:bg-primary/5 hover:text-on-surface-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:text-on-surface-dark dark:hover:bg-primary-dark/5 dark:hover:text-on-surface-dark-strong dark:focus-visible:outline-primary-dark" x-bind:class="userDropdownIsOpen ? 'bg-primary/10 dark:bg-primary-dark/10' : ''" aria-haspopup="true" x-on:click="userDropdownIsOpen = ! userDropdownIsOpen" x-bind:aria-expanded="userDropdownIsOpen">
-        <img src="{{ asset('images/components/layouts/app/profile-icon.png') }}" class="size-8 object-cover rounded-radius" alt="{{ __('shared/accessibility.altText.avatar') }}" aria-hidden="true"/>
+        <img src="{{ asset('images/components/layouts/app/profile-icon.png') }}" class="size-8 object-cover rounded-radius" alt="{{ __('layouts/app.topNavbar.profileDropdown.avatarAltText') }}" aria-hidden="true"/>
         <div class="{{ $sideOrTopNavbar === 'top' ? 'hidden md:flex' : 'flex' }} flex-col min-w-0">
             <span class="text-sm font-bold text-on-surface-strong dark:text-on-surface-dark-strong truncate">{{ auth()->user()->email }}</span>
             <span class="{{ $sideOrTopNavbar === 'top' ? '' : 'truncate '/* 'w-32 overflow-hidden text-ellipsis md:w-36 ' */ }}text-xs" aria-hidden="true">{{ '@'.auth()->user()->name }}</span>

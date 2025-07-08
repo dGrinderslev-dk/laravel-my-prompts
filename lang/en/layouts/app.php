@@ -27,6 +27,7 @@ return [
 		'sideNavbarToggle_srOnly' => 'sidebar toggle',
 		'profileDropdown' => [
 			'srOnly' => 'profile settings',
+			'avatarAltText' => 'User profile picture',
 			'items' => [
 				'user__user_pages__eksempel_page' => 'blabla',
 			],

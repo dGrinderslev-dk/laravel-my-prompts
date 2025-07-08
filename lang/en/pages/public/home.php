@@ -3,7 +3,7 @@ $appName = config('app.name');
 
 return [
 	'heroSection' => [
-		'subtitle' => 'FREE AI Prompt Manager Tool',
+		'subtitle' => 'FREE AI Prompt Manager',
 		//'title' => 'Experience the easiest way to organize',
 		//'decoTitle' => 'prompts',
 		'title' => 'The AI Prompt Manager for Saving and Organizing',
@@ -35,8 +35,8 @@ return [
 		],
 		'featureCardsBtn' => 'Learn More',
 		'featureCardsImg' => [
-			'promptList_interface' => 'AI prompt library dashboard in dark-mode ('.$appName.') showing categorized prompts for ChatGPT and Midjourney with search functionality',
-			'promptForm_interface' => 'AI prompt form for creating and editing prompts with title, prompt-type selection, category dropdown and content editor',
+			'promptList_interface' => 'AI prompt library dashboard in dark-mode (in '.$appName.') showing categorized prompts for ChatGPT and Midjourney with search functionality',
+			'promptForm_interface' => 'AI prompt form (in '.$appName.') for creating and editing prompts with title, prompt-type selection, category dropdown and content editor',
 		],
 	],
 	'faqSection' => [
