@@ -10,13 +10,13 @@
 			'@context' => 'https://schema.org/',
 			'@type' => 'WebSite',
 			'name' => config('app.name'),
-			'url' => \App\Helpers\UrlHelper::canonical(),
+			'url' => \App\Helpers\CustomUrlHelper::currentCanonicalUrl(),
 	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 	</script>
 @endprepend
 
 {{--
-UrlHelper::canonical()
+CustomUrlHelper::currentCanonicalUrl()
 Str::finish(config('app.url'), '/')
 --}}
 

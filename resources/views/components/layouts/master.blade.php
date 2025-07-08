@@ -16,7 +16,8 @@
     'twitterDescription' => $ogDescription,
     'twitterImage' => $ogImage,
     'robotsAllowed' => true,
-    'canonicalUrl' => url()->current(),
+    //'canonicalUrl' => url()->current(),
+    'canonicalUrl' => \App\Helpers\CustomUrlHelper::currentCanonicalUrl(),
 ])
 
 @php
@@ -82,6 +83,8 @@
                 }
             </script>
         @endif
+
+        <!-- dette er en test123 -->
 
         <meta charset="utf-8">
         <meta name="viewport" content="{{ $viewport }}">
