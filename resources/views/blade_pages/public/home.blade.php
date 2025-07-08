@@ -13,6 +13,41 @@
 			'url' => \App\Helpers\CustomUrlHelper::currentCanonicalUrl(),
 	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 	</script>
+
+	<script type="application/ld+json">
+	{!! json_encode([
+			'@context' => 'https://schema.org',
+			'@type' => 'SoftwareApplication',
+			'name' => config('app.name'),
+			'description' => 'Free AI prompt manager for ChatGPT, Midjourney, and other AI tools. Store, categorize, and instantly access your prompts with '.config('app.name'),
+			'operatingSystem' => 'Web',
+			'applicationCategory' => 'Productivity',
+			'offers' => [
+					'@type' => 'Offer',
+					'price' => '0.00',
+					'priceCurrency' => 'USD',
+			],
+			'downloadUrl' => \Illuminate\Support\Str::finish(config('app.url'), '/'),
+			'author' => [
+					'@type' => 'Person',
+					'name' => __('pages/public/home.footer.credits.link_label'),
+			],
+	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+	</script>
+
+	<script type="application/ld+json">
+	{!! json_encode([
+			'@context' => 'https://schema.org',
+			'@type' => 'Organization',
+			'name' => config('app.name'),
+			'url' => \Illuminate\Support\Str::finish(config('app.url'), '/'),
+			'logo' => asset('images/other/logo.png'),
+			'sameAs' => [
+				"https://www.facebook.com/layoutlive.dk/",
+				"https://layoutlive.dk/"
+			],
+	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+	</script>
 @endprepend
 
 @prepend('styles')
