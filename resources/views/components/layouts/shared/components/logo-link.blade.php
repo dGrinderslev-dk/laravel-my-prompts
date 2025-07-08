@@ -11,7 +11,7 @@ Dette er ikke nødvendigt men kan gøres hvis man vil:
 --}}
 
 @props([
-    'href' => route('public.public-pages.home'),
+    'href' => \Illuminate\Support\Str::finish(route('public.public-pages.home'), '/'),
     'text' => 'text-on-primary',
     'text_dark' => 'text-on-primary-dark',
     'darkOrLightMode' => 'default',

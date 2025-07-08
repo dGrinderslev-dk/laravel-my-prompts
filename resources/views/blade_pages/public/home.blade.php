@@ -15,11 +15,6 @@
 	</script>
 @endprepend
 
-{{--
-CustomUrlHelper::currentCanonicalUrl()
-Str::finish(config('app.url'), '/')
---}}
-
 @prepend('styles')
 	<style>
 		/* home-specifikke styles */

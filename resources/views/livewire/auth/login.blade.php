@@ -103,7 +103,7 @@ new #[Layout('components.layouts.auth', [
             {{--
             <a
                 class="absolute right-0 top-0 font-medium text-on-surface dark:text-on-surface-dark underline-offset-2 hover:text-on-surface-strong focus:outline-hidden focus:underline dark:hover:text-primary-dark transition text-sm"
-                href="{{ route('public.public-pages.home') }}"
+                href="{{ some link here... }}"
                 wire:navigate
             >
                 {{ __('pages/auth/login.password.forgot_password_link') }}

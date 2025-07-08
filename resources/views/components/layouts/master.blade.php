@@ -10,13 +10,12 @@
     'ogTitle' => __($titleKey, $titleParams),
     'ogDescription' => $metaDescription,
     'ogImage' => asset('images/other/og_image.jpeg'),
-    'ogUrl' => request()->url(),
+    'ogUrl' => \App\Helpers\CustomUrlHelper::currentCanonicalUrl(),
     'twitterCard' => 'summary_large_image',
     'twitterTitle' => $ogTitle,
     'twitterDescription' => $ogDescription,
     'twitterImage' => $ogImage,
     'robotsAllowed' => true,
-    //'canonicalUrl' => url()->current(),
     'canonicalUrl' => \App\Helpers\CustomUrlHelper::currentCanonicalUrl(),
 ])
 
@@ -83,8 +82,6 @@
                 }
             </script>
         @endif
-
-        <!-- dette er en test123 -->
 
         <meta charset="utf-8">
         <meta name="viewport" content="{{ $viewport }}">

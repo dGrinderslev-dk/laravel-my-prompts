@@ -60,7 +60,7 @@
         {{-- Side navbar --}}
         <nav id="side-navbar" x-cloak class="flex-none fixed left-0 top-0 z-30 flex h-dvh w-60 flex-col border-r border-outline bg-surface-alt p-4 transition-[transform_300ms,height_100ms_ease-out] md:w-64 md:translate-x-0 md:relative dark:border-outline-dark dark:bg-surface-dark-alt" x-bind:class="sidebarIsOpen ? 'translate-x-0' : '-translate-x-60'" aria-label="{{ __('layouts/app.sideNavbar.aria_label') }}">
             {{-- Logo --}}
-            <a href="{{ route('public.public-pages.home') }}" class="ml-2 w-fit text-2xl font-bold text-on-surface-strong dark:text-on-surface-dark-strong">
+            <a href="{{ \Illuminate\Support\Str::finish(route('public.public-pages.home'), '/') }}" class="ml-2 w-fit text-2xl font-bold text-on-surface-strong dark:text-on-surface-dark-strong">
                 <span class="sr-only">{{ __('shared/navigation_links.public__public_pages__home') }}</span>
                 <x-shared.svg.other.app-logo fill="none" class="w-24" aria-hidden="true" />
             </a>

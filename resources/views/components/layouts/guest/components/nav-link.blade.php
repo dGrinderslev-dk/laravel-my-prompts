@@ -9,7 +9,11 @@
     if (array_key_exists('routeParams', $link) && $link['routeParams']) {
         $routeParams = $link['routeParams'];
     }
-    $url = route($link['route'], $routeParams);
+    if ($link['route'] === 'public.public-pages.home') {
+        $url = \Illuminate\Support\Str::finish(route($link['route'], $routeParams), '/');
+    } else {
+        $url = route($link['route'], $routeParams);
+    }
     if (array_key_exists('anchorId', $link) && $link['anchorId']) {
         /*
         if (request()->routeIs($link['route'])) {
