@@ -1,6 +1,18 @@
 @prepend('head')
 	{{-- @vite('resources/css/pages/public/home.css') --}}
+
+	{{-- google search console --}}
 	<meta name="google-site-verification" content="{{ config('app.google_search_console_verification') }}">
+
+	{{-- Structured Data (schema.org) --}}
+	<script type="application/ld+json">
+	{!! json_encode([
+			'@context' => 'https://schema.org/',
+			'@type' => 'WebSite',
+			'name' => config('app.name'),
+			'url' => config('app.url'),
+	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+	</script>
 @endprepend
 
 @prepend('styles')
