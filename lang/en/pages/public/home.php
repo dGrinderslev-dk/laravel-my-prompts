@@ -4,8 +4,6 @@ $appName = config('app.name');
 return [
 	'heroSection' => [
 		'subtitle' => 'FREE AI Prompt Manager',
-		//'title' => 'Experience the easiest way to organize',
-		//'decoTitle' => 'prompts',
 		'title' => 'The AI Prompt Manager for Saving and Organizing',
 		'decoTitle' => 'prompts',
 		'text' => 'Store, organize, and access your AI prompts effortlessly. '.$appName.' helps you manage your prompts for ChatGPT, Midjourney, and other AI tools.',

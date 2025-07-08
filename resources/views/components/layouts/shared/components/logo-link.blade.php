@@ -48,5 +48,5 @@ $classes = "{$baseClasses} {$modeClasses} {$borderClasses}";
 	{{ $attributes->merge(['class' => $classes]) }}
 >
 	<span class="sr-only">{{ __('shared/navigation_links.public__public_pages__home') }}</span>
-	<x-shared.svg.other.app-logo fill="none" class="w-24" aria-hidden="true" />
+	<x-shared.svg.other.app-logo {{-- role="img" aria-labelledby="logoTitle logoDesc" --}} fill="none" class="w-24" role="none" aria-hidden="true" />
 </a>

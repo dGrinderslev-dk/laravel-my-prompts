@@ -1,4 +1,5 @@
 <?php
+$appName = config('app.name');
 
 return [
 	'srOnly' => [
@@ -9,5 +10,9 @@ return [
 		'breadcrumb' => 'breadcrumb',
 		'mobileNavToggle' => 'toggle mobile navigation menu',
 		'mobileNav' => 'mobile navigation menu',
+	],
+	'logo' => [
+		'title' => $appName.' Logo',
+		'desc' => 'Logo for '.$appName.' (AI prompt manager tool for organizing AI prompts)',
 	],
 ];
