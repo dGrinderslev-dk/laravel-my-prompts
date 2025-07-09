@@ -192,7 +192,7 @@
 			class="delay-500 will-change-transform dark:bg-surface-dark border dark:border-surface-dark-alt backdrop-blur-3xl rounded-xl shadow-2xl overflow-hidden hero-scale-animation"
 			style="view-timeline-name: --figure-reveal; view-timeline-axis: block; animation: scale-on-scroll linear; animation-timeline: --figure-reveal; animation-range: entry 50% cover 100%;"
 			>
-				<img src="{{ asset('images/blade_pages/public/home/hero-banner-large.webp') }}" width="1468" height="815" alt="{{ __('pages/public/home.heroSection.bannerImg') }}">
+				<img src="{{ asset('images/blade_pages/public/home/hero-banner-large.webp') }}" width="1468" height="815" fetchpriority="high" alt="{{ __('pages/public/home.heroSection.bannerImg') }}">
 			</figure>
 
 			{{-- Blurry glow effect --}}
