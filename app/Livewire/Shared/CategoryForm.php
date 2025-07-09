@@ -59,8 +59,6 @@ class CategoryForm extends Component
     #[On('add-taxonomy')]
     public function addTaxonomy(): void
     {
-        logger('vi er i addTaxonomy() i CategoryForm');
-
         $this->resetValidation();
         $this->reset();
         $this->loadCategory(null);
@@ -69,27 +67,11 @@ class CategoryForm extends Component
     #[On('edit-taxonomy')]
     public function updateTaxonomy(int $id, string $currentRoute, int $currentRouteCategoryId): void // fillEditForm($data, $taxonomyType)
     {
-        logger('vi er i updateTaxonomy() i CategoryForm');
-        logger('jeg modtog id: '.$id);
-        logger(serialize($id));
-        logger('jeg modtog currentRoute: '.$currentRoute);
-        logger(serialize($currentRoute));
-        logger('jeg modtog currentRouteCategoryId: '.$currentRouteCategoryId);
-        logger(serialize($currentRouteCategoryId));
-
         $this->resetValidation();
         $this->reset();
-
         $this->currentRoute = $currentRoute;
         $this->currentRouteCategoryId = $currentRouteCategoryId;
-
-        logger('nu er der blevet reset');
-        logger(serialize($this->currentRoute));
-        logger(serialize($this->currentRouteCategoryId));
-
-
         $this->loadCategory($id);
-
         $this->name = $this->category->name;
         $this->description = $this->category->description;
         $this->slug = $this->category->slug;
@@ -97,96 +79,31 @@ class CategoryForm extends Component
 
     public function save()
     {
-
-        logger('så blev der trykket på save');
-
-
-
-
-
-        logger($this->category);
-
-        logger(serialize($this->category));
-        logger(serialize($this->category->exists));
-
-        $giraf = $this->category->exists ? 'update' : 'create';
-        logger($giraf);
-
         $validated = $this->validate();
-        logger(serialize($validated));
-        logger($validated['name']);
-        logger($validated['description']);
-        logger($validated['slug']);
-
-
         $this->dispatch(
             'close-modal',
             id: 'taxonomy-modal',
         );
-
-
-
         $this->category->fill($validated);
-        logger($this->category);
-
         $this->category->user_id ??= auth()->id();
-        logger($this->category);
-
         $this->category->save();
-
-        logger('så er der gemt og her cat');
-        logger($this->category);
-        logger('så er der gemt og her er id');
-        logger(serialize($this->category->id));
-
         $this->dispatch(
             'taxonomy-saved',
             taxonomyType: 'category',
             id: $this->category->id,
             action: $this->category->exists ? 'update' : 'create', // 'delete'|'update'|'create'
         );
-
-
-        //session()->flash('status', 'Post successfully updated.');
-
-        //return $this->redirect('/posts', navigate: true);
     }
 
     public function delete()
     {
-        logger('vi sletter cat med id');
-        logger(serialize($this->category->id));
         $deletedCategoryId = $this->category->id;
-        logger('$deletedCategoryId');
-        logger($deletedCategoryId);
-        logger('$this->category->exists');
-        logger($this->category->exists);
         if ($this->category->exists) {
-            logger('vi er inde i if fordi den exists');
-            logger('$this->currentRoute');
-            logger(serialize($this->currentRoute));
-            logger('$this->currentRouteCategoryId');
-            logger(serialize($this->currentRouteCategoryId));
-            logger('$deletedCategoryId');
-            logger($deletedCategoryId);
-
             $this->dispatch(
                 'close-modal',
                 id: 'taxonomy-modal',
             );
-
             $this->category->delete();
-
-            logger('så er den slettet');
-            logger('her er cat igen $this->category');
-            logger(serialize($this->category));
-
-            logger('$this->category->exists');
-            logger($this->category->exists);
-
-            logger('$deletedCategoryId');
-            logger($deletedCategoryId);
-
             $this->dispatch(
                 'taxonomy-deleted',
                 taxonomyType: 'category',
@@ -198,7 +115,6 @@ class CategoryForm extends Component
                 $this->currentRoute === 'user.user-categories.show'
                 && $this->currentRouteCategoryId === $deletedCategoryId
             ) {
-                logger('vi er i den route som skal slettes og den er nu slettet. lad os redirect');
                 return $this->redirect(route('user.user-prompts.uncategorized', absolute: false), navigate: false);
             }
         }
