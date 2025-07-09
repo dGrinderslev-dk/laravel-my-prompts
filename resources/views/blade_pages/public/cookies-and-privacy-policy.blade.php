@@ -1,3 +1,68 @@
+@prepend('head')
+	{{-- Structured Data (schema.org) --}}
+	<script type="application/ld+json">
+	{!! json_encode([
+		'@context' => 'https://schema.org/',
+		'@type' => 'WebPage',
+		'name' => __('pages/public/cookies-and-privacy-policy.header.title'),
+		'description' => __('pages/public/cookies-and-privacy-policy.header.subtitle'),
+		'url' => route('public.public-pages.cookies-and-privacy-policy'),
+		'isPartOf' => [
+			'@type' => 'WebSite',
+			'name' => config('app.name'),
+			'url' => \Illuminate\Support\Str::finish(config('app.url'), '/'),
+		],
+		'about' => [
+			'@type' => 'Thing',
+			'name' => 'Privacy Policy',
+		],
+		'dateModified' => config('app.privacy_policy_updated').'-01T00:00:00Z',
+		'author' => [
+			'@type' => 'Organization',
+			'name' => config('app.name'),
+		],
+		'publisher' => [
+			'@type' => 'Organization',
+			'name' => config('app.name'),
+			'url' => \Illuminate\Support\Str::finish(config('app.url'), '/'),
+		],
+	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+	</script>
+
+	<script type="application/ld+json">
+	{!! json_encode([
+		'@context' => 'https://schema.org/',
+		'@type' => 'Article',
+		'headline' => __('pages/public/cookies-and-privacy-policy.header.title'),
+		'description' => __('pages/public/cookies-and-privacy-policy.header.subtitle'),
+		'author' => [
+			'@type' => 'Organization',
+			'name' => config('app.name'),
+		],
+		'publisher' => [
+			'@type' => 'Organization',
+			'name' => config('app.name'),
+			'url' => \Illuminate\Support\Str::finish(config('app.url'), '/'),
+		],
+		'datePublished' => '2025-07-01T00:00:00Z',
+		'dateModified' => config('app.privacy_policy_updated').'-01T00:00:00Z',
+		'mainEntityOfPage' => [
+			'@type' => 'WebPage',
+			'@id' => route('public.public-pages.cookies-and-privacy-policy'),
+		],
+		'articleSection' => 'Legal',
+		'keywords' => [
+			'privacy policy',
+			'cookies',
+			'GDPR',
+			'data protection',
+			'user privacy',
+			config('app.name'),
+		],
+	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+	</script>
+@endprepend
+
 @php
 	$titleKey = $titleKey ?? 'shared/title.blade_pages__public__cookies_and_privacy_policy';
 	$titleParams = $titleParams ?? [];

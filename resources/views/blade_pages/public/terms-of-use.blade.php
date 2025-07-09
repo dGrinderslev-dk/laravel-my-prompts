@@ -1,3 +1,68 @@
+@prepend('head')
+	{{-- Structured Data (schema.org) --}}
+	<script type="application/ld+json">
+	{!! json_encode([
+		'@context' => 'https://schema.org/',
+		'@type' => 'WebPage',
+		'name' => __('pages/public/terms-of-use.header.title'),
+		'description' => __('pages/public/terms-of-use.header.subtitle'),
+		'url' => route('public.public-pages.terms-of-use'),
+		'isPartOf' => [
+			'@type' => 'WebSite',
+			'name' => config('app.name'),
+			'url' => \Illuminate\Support\Str::finish(config('app.url'), '/'),
+		],
+		'about' => [
+			'@type' => 'Thing',
+			'name' => 'Terms of Use',
+		],
+		'dateModified' => config('app.terms_of_use_updated').'-01T00:00:00Z',
+		'author' => [
+			'@type' => 'Organization',
+			'name' => config('app.name'),
+		],
+		'publisher' => [
+			'@type' => 'Organization',
+			'name' => config('app.name'),
+			'url' => \Illuminate\Support\Str::finish(config('app.url'), '/'),
+		],
+	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+	</script>
+
+	<script type="application/ld+json">
+	{!! json_encode([
+		'@context' => 'https://schema.org/',
+		'@type' => 'Article',
+		'headline' => __('pages/public/terms-of-use.header.title'),
+		'description' => __('pages/public/terms-of-use.header.subtitle'),
+		'author' => [
+			'@type' => 'Organization',
+			'name' => config('app.name'),
+		],
+		'publisher' => [
+			'@type' => 'Organization',
+			'name' => config('app.name'),
+			'url' => \Illuminate\Support\Str::finish(config('app.url'), '/'),
+		],
+		'datePublished' => '2025-07-01T00:00:00Z',
+		'dateModified' => config('app.terms_of_use_updated').'-01T00:00:00Z',
+		'mainEntityOfPage' => [
+			'@type' => 'WebPage',
+			'@id' => route('public.public-pages.terms-of-use'),
+		],
+		'articleSection' => 'Legal',
+		'keywords' => [
+			'terms of use',
+			'terms of service',
+			'user agreement',
+			'legal terms',
+			'service conditions',
+			config('app.name'),
+		],
+	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+	</script>
+@endprepend
+
 @php
 	$titleKey = $titleKey ?? 'shared/title.blade_pages__public__terms_of_use';
 	$titleParams = $titleParams ?? [];
