@@ -48,6 +48,23 @@
 			],
 	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 	</script>
+
+	<script type="application/ld+json">
+	{!! json_encode([
+			'@context' => 'https://schema.org',
+			'@type' => 'FAQPage',
+			'mainEntity' => collect(__('pages/public/home.faqSection.faqsQuestion'))->map(function ($question, $index) {
+					return [
+							'@type' => 'Question',
+							'name' => $question,
+							'acceptedAnswer' => [
+									'@type' => 'Answer',
+									'text' => __('pages/public/home.faqSection.faqsAnswer.'.$index),
+							],
+					];
+			})->values()->all(),
+	], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+	</script>
 @endprepend
 
 @prepend('styles')
