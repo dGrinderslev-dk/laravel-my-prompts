@@ -252,7 +252,7 @@
                     */
                     [
                         'id' => 'facebook',
-                        'href' => 'https://www.facebook.com/layoutlive.dk/',
+                        'href' => 'https://www.facebook.com/myprompts/',
                         'icon' => 'bootstrap.facebook',
                     ],
                 ];
