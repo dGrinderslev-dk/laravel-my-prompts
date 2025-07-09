@@ -372,7 +372,10 @@
 							<p class="font-medium text-on-surface-strong dark:text-on-surface-dark-strong mb-2">
 								{{ __('pages/public/terms-of-use.contact.info.title') }}
 							</p>
-							<p>{{ __('pages/public/terms-of-use.contact.info.email') }}</p>
+							<p>
+									{{ __('pages/public/terms-of-use.contact.info.email') }}
+									<x-muddle-text-random :email="config('app.legal_email')" />
+							</p>
 							<p>{{ __('pages/public/terms-of-use.contact.info.response') }}</p>
 						</div>
 					</div>

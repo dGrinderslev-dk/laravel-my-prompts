@@ -1,6 +1,6 @@
 <?php
 $appName = config('app.name');
-$legalEmail = config('app.legal_email');
+//$legalEmail = config('app.legal_email');
 $lastUpdated = config('app.privacy_policy_updated_formatted');
 
 return [
@@ -213,7 +213,7 @@ return [
 		'description' => 'If you have any questions about this Privacy Policy or wish to exercise your privacy rights, please contact us:',
 		'info' => [
 			'title' => 'Contact Information:',
-			'email' => 'Email: ' . $legalEmail,
+			'email' => 'Email: ',
 			'response' => 'We will respond to your inquiry within 30 days.',
 		],
 	],

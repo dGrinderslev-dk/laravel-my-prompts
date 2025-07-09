@@ -422,7 +422,10 @@
 							<p class="font-medium text-on-surface-strong dark:text-on-surface-dark-strong mb-2">
 								{{ __('pages/public/cookies-and-privacy-policy.contact.info.title') }}
 							</p>
-							<p>{{ __('pages/public/cookies-and-privacy-policy.contact.info.email') }}</p>
+							<p>
+								{{ __('pages/public/cookies-and-privacy-policy.contact.info.email') }}
+								<x-muddle-text-random :email="config('app.legal_email')" />
+							</p>
 							<p>{{ __('pages/public/cookies-and-privacy-policy.contact.info.response') }}</p>
 						</div>
 					</div>

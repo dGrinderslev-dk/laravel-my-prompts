@@ -1,6 +1,6 @@
 <?php
 $appName = config('app.name');
-$legalEmail = config('app.legal_email');
+//$legalEmail = config('app.legal_email');
 $lastUpdated = config('app.terms_of_use_updated_formatted');
 
 return [
@@ -182,7 +182,7 @@ return [
 		'description' => 'If you have any questions about these Terms of Use, please contact us:',
 		'info' => [
 			'title' => 'Contact Information:',
-			'email' => 'Email: ' . $legalEmail,
+			'email' => 'Email: ',
 			'response' => 'We will respond to your inquiry within 5 business days.',
 		],
 	],
